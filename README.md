@@ -1,4 +1,4 @@
-# Título do Projeto
+# Projeto e-LABORE
 
 `CURSO: Sistemas de Informação`
 
@@ -6,20 +6,22 @@
 
 `SEMESTRE: 1º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto e-LABORE consiste no desenvolvimento de uma aplicação web com foco social, voltada para a criação de currículos profissionais de forma simples, gratuita e acessível. A proposta central é permitir que qualquer pessoa — especialmente aquelas em situação de vulnerabilidade ou com baixa familiaridade com tecnologia — consiga gerar um currículo estruturado por meio de um formulário guiado, sem necessidade de cadastro, conhecimento técnico ou uso de computador. A aplicação será responsiva, funcionando bem em celulares, e permitirá ao usuário baixar o currículo em PDF pronto para uso.
+
+O projeto surge como resposta a um problema real do contexto brasileiro: milhões de pessoas enfrentam dificuldades para entrar ou retornar ao mercado de trabalho não apenas por falta de experiência, mas por não conseguirem apresentar suas informações de forma adequada em um currículo. Assim, o e-LABORE busca eliminar barreiras tecnológicas e cognitivas, oferecendo uma solução intuitiva, acessível e alinhada às boas práticas de recrutamento, contribuindo diretamente para a empregabilidade e inclusão digital dessa população.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
-* Nome completo do aluno 5
+* Arthur de Andrade
+* Arthur Andre Mariano Souza
+* Darwin Luan
+* Felipe Davila Mendes
+* João Vitor Rodrigues Oliveira
+* Pedro Souza
 
+## Orientadores
 
-## Orientador
-
-* Nome completo do professor 1
+* Alisson Rabelo Arantes & Roberto Felipe Dias Ferreira da Rocha
 
 # Planejamento
 
