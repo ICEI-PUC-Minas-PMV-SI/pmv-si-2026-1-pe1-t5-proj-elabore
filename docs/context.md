@@ -2,11 +2,11 @@
 
 ## Contextualização
 
-O mercado de trabalho brasileiro vive uma contradição importante: ao mesmo tempo em que a taxa de desocupação apresentou queda, milhões de brasileiros ainda permanecem em situação de desemprego ou informalidade. Nesse cenário, a elaboração de um currículo profissional adequado continua sendo uma barreira real para muitas pessoas, especialmente aquelas com menor escolaridade, baixa familiaridade com ferramentas digitais e acesso restrito a computadores. Além disso, grande parte da população acessa a internet exclusivamente pelo celular, o que dificulta ainda mais a criação e formatação de documentos profissionais. 
+O mercado de trabalho brasileiro vive uma contradição importante: ao mesmo tempo em que a taxa de desocupação apresentou queda, milhões de brasileiros ainda permanecem em situação de desemprego ou informalidade. Nesse cenário, a elaboração de um currículo profissional adequado continua sendo uma barreira real para muitas pessoas, especialmente aquelas com menor escolaridade, baixa familiaridade com ferramentas digitais e acesso restrito a computadores. Além disso, grande parte da população acessa a internet principalmente pelo celular, o que dificulta ainda mais a criação e formatação de documentos profissionais.
 
-Esse contexto revela um problema que vai além da empregabilidade e alcança também a inclusão digital. Embora existam ferramentas conhecidas para criação de currículos, muitas delas exigem cadastro, dependem de conhecimentos prévios de edição ou restringem funcionalidades importantes, como o download em PDF. Para uma parcela significativa da população, essas exigências tornam o processo pouco acessível, justamente para quem mais precisa de apoio nesse momento. 
+Esse contexto revela um problema que vai além da empregabilidade e alcança também a inclusão digital. Embora existam ferramentas conhecidas para criação de currículos, muitas delas dependem de conhecimentos prévios de edição, apresentam fluxos extensos ou restringem funcionalidades importantes, como o download em PDF. Para uma parcela significativa da população, essas exigências tornam o processo pouco acessível, justamente para quem mais precisa de apoio nesse momento.
 
-Diante dessa realidade, o projeto **e-LABORE** se insere como uma proposta de aplicação web com impacto social, voltada à criação de currículos profissionais de maneira gratuita, simples e acessível. A ideia é oferecer uma ferramenta responsiva, intuitiva e guiada, que permita ao usuário preencher seus dados com facilidade e gerar um currículo pronto para impressão ou envio, mesmo sem experiência prévia com editores de texto ou plataformas de design. 
+Diante dessa realidade, o projeto **e-LABORE** se insere como uma proposta de aplicação web com impacto social, voltada à criação de currículos profissionais de maneira gratuita, simples e acessível. A ideia é oferecer uma ferramenta responsiva, intuitiva e guiada, que permita ao usuário acessar o sistema por meio de login/cadastro simples, preencher seus dados com facilidade e gerar um currículo pronto para impressão ou envio, mesmo sem experiência prévia com editores de texto ou plataformas de design.
 
 ## Problema
 
@@ -23,16 +23,17 @@ Desenvolver uma aplicação web que permita a criação de currículos profissio
 ### Objetivos específicos
 
 - Desenvolver uma interface responsiva que funcione adequadamente em smartphones, tablets e computadores.
+- Implementar uma etapa de login/cadastro simples, compatível com um projeto sem backend, para iniciar a experiência do usuário no sistema.
 - Implementar um formulário guiado, com linguagem simples e orientações contextuais para auxiliar o preenchimento das informações.
-- Permitir a geração e o download do currículo em formato PDF sem exigir cadastro ou autenticação.
-- Oferecer modelos de currículo alinhados às boas práticas de recrutamento, priorizando clareza, legibilidade e organização visual.
+- Permitir a geração e o download do currículo em formato PDF.
+- Oferecer um modelo de currículo alinhado às boas práticas de recrutamento, priorizando clareza, legibilidade e organização visual.
 - Garantir conformidade com diretrizes de acessibilidade web, permitindo que usuários com diferentes níveis de letramento digital utilizem a aplicação com autonomia.
 
 ## Justificativa
 
 A relevância do projeto e-LABORE está diretamente associada ao impacto social do problema que ele busca enfrentar. No Brasil, milhões de pessoas desempregadas ou em situação de informalidade encontram dificuldades para acessar oportunidades de trabalho formal, e a construção do currículo representa uma barreira concreta nesse processo. Entre jovens de 18 a 24 anos, a taxa de desemprego é ainda mais alta, enquanto trabalhadores mais velhos e com menor escolaridade também enfrentam desafios significativos de reinserção profissional.
 
-Além disso, a exclusão digital amplia esse problema. Uma parcela expressiva da população não domina a edição de documentos digitais, e muitos usuários dependem exclusivamente do celular para acessar a internet. Soma-se a isso o fato de que parte da população apresenta dificuldades até mesmo para preencher formulários digitais, o que reforça a necessidade de soluções simples, guiadas e inclusivas. As ferramentas disponíveis atualmente, em geral, não atendem bem esse público, pois exigem cadastro, cobram por funcionalidades importantes ou pressupõem conhecimentos técnicos que muitos usuários não possuem.
+Além disso, a exclusão digital amplia esse problema. Uma parcela expressiva da população não domina a edição de documentos digitais, e muitos usuários dependem exclusivamente do celular para acessar a internet. Soma-se a isso o fato de que parte da população apresenta dificuldades até mesmo para preencher formulários digitais, o que reforça a necessidade de soluções simples, guiadas e inclusivas. As ferramentas disponíveis atualmente, em geral, não atendem bem esse público, pois cobram por funcionalidades importantes ou pressupõem conhecimentos técnicos que muitos usuários não possuem.
 
 Dessa forma, o e-LABORE se justifica por preencher uma lacuna real no mercado e por oferecer uma solução com potencial de transformação social direta. Ao facilitar a criação de currículos de forma gratuita, rápida e acessível, o projeto contribui não apenas para a empregabilidade, mas também para a autonomia digital de pessoas em situação de vulnerabilidade.
 

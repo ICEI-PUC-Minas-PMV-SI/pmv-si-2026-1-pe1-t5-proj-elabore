@@ -1,19 +1,19 @@
 # Referências
 
-Inclua todas as referências (livros, artigos, sites, etc) utilizadas no desenvolvimento do trabalho.
+As referências abaixo reúnem materiais utilizados como apoio para a definição do problema, requisitos, interface, acessibilidade e desenvolvimento front-end do e-LABORE.
 
-> **Links Úteis**:
-> - [Formato ABNT](https://www.normastecnicas.com/referencias/)
+**[1]** INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. _Pesquisa Nacional por Amostra de Domicílios Contínua: mercado de trabalho_. Disponível em: https://www.ibge.gov.br/. Acesso em: 2026.
 
-Exemplos de referências bibliográficas:
+**[2]** WORLD WIDE WEB CONSORTIUM. _Web Content Accessibility Guidelines (WCAG) 2.2_. Disponível em: https://www.w3.org/TR/WCAG22/. Acesso em: 2026.
 
-**[1]** - _ELMASRI, Ramez; NAVATHE, Sham. **Sistemas de banco de dados**. 7. ed. São Paulo: Pearson, c2019. E-book. ISBN 9788543025001._
+**[3]** MDN WEB DOCS. _HTML: HyperText Markup Language_. Disponível em: https://developer.mozilla.org/pt-BR/docs/Web/HTML. Acesso em: 2026.
 
-**[2]** - _COPPIN, Ben. **Inteligência artificial**. Rio de Janeiro, RJ: LTC, c2010. E-book. ISBN 978-85-216-2936-8._
+**[4]** MDN WEB DOCS. _CSS: Cascading Style Sheets_. Disponível em: https://developer.mozilla.org/pt-BR/docs/Web/CSS. Acesso em: 2026.
 
-**[3]** - _CORMEN, Thomas H. et al. **Algoritmos: teoria e prática**. Rio de Janeiro, RJ: Elsevier, Campus, c2012. xvi, 926 p. ISBN 9788535236996._
+**[5]** MDN WEB DOCS. _JavaScript_. Disponível em: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript. Acesso em: 2026.
 
-**[4]** - _SUTHERLAND, Jeffrey Victor. **Scrum: a arte de fazer o dobro do trabalho na metade do tempo**. 2. ed. rev. São Paulo, SP: Leya, 2016. 236, [4] p. ISBN 9788544104514._
+**[6]** MDN WEB DOCS. _Window: localStorage property_. Disponível em: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage. Acesso em: 2026.
 
-**[5]** - _RUSSELL, Stuart J.; NORVIG, Peter. **Inteligência artificial**. Rio de Janeiro: Elsevier, c2013. xxi, 988 p. ISBN 9788535237016._
+**[7]** NIELSEN NORMAN GROUP. _Usability 101: Introduction to Usability_. Disponível em: https://www.nngroup.com/articles/usability-101-introduction-to-usability/. Acesso em: 2026.
 
+**[8]** ATLASSIAN. _Histórias de usuário com exemplos e template_. Disponível em: https://www.atlassian.com/br/agile/project-management/user-stories. Acesso em: 2026.

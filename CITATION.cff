@@ -1,33 +1,47 @@
-# This CITATION.cff file was generated with cffinit.
-# Visit https://bit.ly/cffinit to generate yours today!
-
 cff-version: 1.2.0
-title: Web Application Template
+title: e-LABORE
 message: >-
-  Repositório padrão para o Eixo 1 - Projeto 1: Aplicações
-  Web da PUC Minas.
+  Aplicação web para criação guiada, acessível e responsiva de currículos
+  profissionais.
 type: software
 authors:
-  - given-names: Aluno 1
-    family-names: Nome Completo
-    email: aluno@pucminas.br
-    affiliation: PUC Minas
-  - given-names: Hugo
-    name-particle: 'B '
-    family-names: de Paula
+  - given-names: Arthur Andre
+    family-names: Mariano Souza
+    affiliation: PUC Minas - Sistemas de Informação EaD
+  - given-names: Darwin
+    family-names: Luan
+    affiliation: PUC Minas - Sistemas de Informação EaD
+  - given-names: Felipe
+    family-names: Davila Mendes
+    email: felipe.davila.bh@gmail.com
+    affiliation: PUC Minas - Sistemas de Informação EaD
+  - given-names: João Vitor
+    family-names: Rodrigues Oliveira
+    email: joao.oliveira.1662604@sga.pucminas.br
+    affiliation: PUC Minas - Sistemas de Informação EaD
+  - given-names: Alisson
+    family-names: Rabelo Arantes
     name-suffix: Prof.
-    email: hugo@pucminas.br
     affiliation: PUC Minas
-    orcid: 'https://orcid.org/0000-0002-6193-3205'
+  - given-names: Roberto Felipe
+    family-names: Dias Ferreira da Rocha
+    name-suffix: Prof.
+    email: rocha@pucminas.br
+    affiliation: PUC Minas
 repository-code: >-
-  https://github.com/ICEI-PUC-Minas-PMV-SI/WebApplicationProject-Template
+  https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2026-1-pe1-t5-proj-elabore
 abstract: >-
-  Descrever resumidamente, em um ou dois parágrafos, o
-  projeto que foi desenvolvido.
+  O e-LABORE é uma aplicação web com foco social voltada para a criação de
+  currículos profissionais de forma simples, gratuita, guiada e responsiva.
+  A solução auxilia pessoas com baixa familiaridade digital, jovens em busca
+  do primeiro emprego e profissionais em recolocação a organizarem suas
+  informações e gerarem um currículo pronto para download em PDF.
 keywords:
+  - Currículo
+  - Empregabilidade
+  - Inclusão digital
   - Desenvolvimento Web
   - HTML
   - CSS
   - JavaScript
-  - Template
-date-released: '2024-06-23'
+date-released: '2026-05-19'
