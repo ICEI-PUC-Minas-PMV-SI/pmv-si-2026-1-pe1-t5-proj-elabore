@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-LABORE - Seus Detalhes</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="builder-page">
+    <nav class="stepbar" aria-label="Etapas do currículo">
+      <a class="active" href="detalhes.html">Seus Detalhes</a>
+      <a href="minibio.html">Mini-Bio</a>
+      <a href="experiencia.html">Experiência</a>
+      <a href="educacao.html">Educação</a>
+      <a href="habilidades.html">Habilidades</a>
+    </nav>
+
+    <main class="builder-layout">
+      <section class="details-panel" aria-labelledby="details-title">
+        <h1 id="details-title">Cabeçalho do seu currículo</h1>
+        <p class="subtitle">Como os empregadores devem contatá-lo?</p>
+
+        <div class="avatar-row">
+          <div class="avatar" aria-label="Foto do usuário">MA</div>
+          <button class="avatar-add" type="button" aria-label="Adicionar foto" data-dev-button>+</button>
+        </div>
+
+        <form class="form-grid">
+          <div class="field">
+            <label for="cargo">Cargo desejado</label>
+            <select id="cargo" name="cargo">
+              <option>Designer de Produto Sênior</option>
+              <option>Auxiliar Administrativo</option>
+              <option>Atendente</option>
+              <option>Desenvolvedor Front-end</option>
+            </select>
+          </div>
+
+          <div class="two-columns">
+            <div class="field">
+              <label for="primeiro-nome">Primeiro Nome</label>
+              <input id="primeiro-nome" name="primeiro-nome" type="text" value="Maksud">
+            </div>
+
+            <div class="field">
+              <label for="sobrenome">Sobrenome</label>
+              <input id="sobrenome" name="sobrenome" type="text" value="Alam">
+            </div>
+          </div>
+
+          <div class="two-columns">
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" value="maksud@musemind.agency">
+            </div>
+
+            <div class="field">
+              <label for="telefone">Phone</label>
+              <input id="telefone" name="telefone" type="tel" value="+880 123 456 7890">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="endereco">Endereço</label>
+            <input id="endereco" name="endereco" type="text" value="Daca, Bangladesh">
+          </div>
+        </form>
+
+        <div class="details-actions">
+          <a class="btn secondary" href="foto.html">Voltar</a>
+          <a class="btn" href="minibio.html">Salvar &amp; Avançar</a>
+        </div>
+      </section>
+
+      <aside class="preview-panel" aria-label="Prévia do currículo">
+        <article class="resume-page">
+          <header class="resume-head">
+            <div class="resume-photo" aria-hidden="true">MA</div>
+            <div class="resume-contact">
+              Daca, Bangladesh<br>
+              +880 123 456 7890<br>
+              maksud@musemind.agency
+            </div>
+          </header>
+
+          <h2 class="resume-name">MAKSUD ALAM</h2>
+          <p class="resume-role">Designer de Produto Sênior</p>
+
+          <section class="resume-section">
+            <h2>Sobre</h2>
+            <p>Trabalho como Designer de Produto Sênior e acompanho projetos digitais com foco em clareza, organização e experiência do usuário.</p>
+          </section>
+
+          <section class="resume-section">
+            <h2>Experiencia</h2>
+            <p><strong>Designer de Produto Sênior: Musemind Digital Agency</strong></p>
+            <ul>
+              <li>Designer responsavel por telas, sistemas visuais e melhorias de fluxo.</li>
+              <li>Colaboração com equipes para entregar interfaces simples e consistentes.</li>
+            </ul>
+          </section>
+
+          <section class="resume-section">
+            <h2>Educação</h2>
+            <p>BFA Design Industrial - 2003</p>
+          </section>
+        </article>
+      </aside>
+    </main>
+
+    <nav class="nav-arrows" data-nav-arrows aria-label="Navegação entre telas"></nav>
+    <script src="navigation.js"></script>
+  </body>
+</html>

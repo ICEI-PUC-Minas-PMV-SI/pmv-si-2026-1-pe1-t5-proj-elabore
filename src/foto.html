@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-LABORE - Envie Sua Foto</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="photo-page">
+    <main class="photo-card" aria-labelledby="photo-title">
+      <h1 id="photo-title">Envie Sua Foto</h1>
+      <p>Selecione uma foto do seu perfil para sua conta. Uma foto profissional ajuda a se destacar.</p>
+
+      <label class="drop-zone" for="foto">
+        <span>
+          <span class="upload-icon" aria-hidden="true">&#8679;</span>
+          <strong>Clique para enviar</strong> ou arraste e solte<br>
+          <span data-photo-name>PNG, JPG ou GIF (max. 300x300px)</span>
+        </span>
+        <input id="foto" name="foto" type="file" accept="image/png,image/jpeg,image/gif" data-photo-input>
+      </label>
+
+      <div class="photo-actions">
+        <button class="btn" type="button" data-dev-button>Enviar</button>
+        <a class="btn ghost" href="detalhes.html">Não tenho uma foto? Pular esta etapa</a>
+      </div>
+    </main>
+
+    <nav class="nav-arrows" data-nav-arrows aria-label="Navegação entre telas"></nav>
+    <script src="navigation.js"></script>
+  </body>
+</html>
