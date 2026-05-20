@@ -1,42 +1,85 @@
 # Programação de Funcionalidades
 
-Implementação do sistema descritas por meio dos requisitos funcionais e/ou não funcionais. Deve relacionar os requisitos atendidos os artefatos criados (código fonte) além das estruturas de dados utilizadas e as instruções para acesso e verificação da implementação que deve estar funcional no ambiente de hospedagem.
+Este documento descreve a implementação prevista para o e-LABORE, relacionando os requisitos funcionais e não funcionais aos artefatos de front-end que serão criados.
 
-Para cada requisito funcional, pode ser entregue um artefato desse tipo.
-
-O professor Rommel Carneiro apresenta alguns exemplos prontos para serem utilizados como referência:
-- Login do sistema: [https://repl.it/@rommelpuc/LoginApp](https://repl.it/@rommelpuc/LoginApp) 
-- Cadastro de Contatos: [https://repl.it/@rommelpuc/Cadastro-de-Contatos](https://repl.it/@rommelpuc/Cadastro-de-Contatos)
-
-
-> **Links Úteis**:
->
-> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> - [JSON Tutorial](https://www.w3resource.com/JSON)
-> - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
-> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
-
-## Exemplo
+O sistema será desenvolvido como uma aplicação web estática em **HTML, CSS e JavaScript**, sem módulo de backend. Quando houver necessidade de manter dados durante o uso, como informações de login local ou currículo em edição, a aplicação poderá utilizar recursos do navegador, como `localStorage`.
 
 ## Requisitos Atendidos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não-funcionais que relacionam o escopo do projeto com os artefatos criados:
-
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito | Responsável | Artefato Criado |
-|------|------------------------|------------|-----------------|
-|RF-001| A aplicação deve permitir que o usuário gerencie suas tarefas | João | index.html |
-|RF-002| A aplicação deve permitir a emissão de um relatório de tarefas realizadas no mês | Ana Paula | cadastro-noticia.html |
+| ID | Descrição do Requisito | Responsável | Artefato Previsto |
+| --- | --- | --- | --- |
+| RF-001 | A aplicação deve apresentar uma landing page com a proposta do e-LABORE e chamada para iniciar o currículo. | Equipe | `index.html` |
+| RF-002 | A aplicação deve permitir login e cadastro simples do usuário antes do início do preenchimento do currículo. | Equipe | `login.html` |
+| RF-003 | A aplicação deve permitir envio de foto do usuário, com opção de pular essa etapa. | Equipe | `foto.html` |
+| RF-004 | A aplicação deve permitir o preenchimento de dados pessoais e de contato. | Equipe | `detalhes.html` |
+| RF-005 | A aplicação deve permitir o preenchimento de mini-bio ou resumo profissional. | Equipe | `minibio.html` |
+| RF-006 | A aplicação deve permitir cadastro, edição e remoção de experiências profissionais. | Equipe | `experiencia.html` |
+| RF-007 | A aplicação deve permitir cadastro, edição e remoção de formações acadêmicas ou cursos. | Equipe | `educacao.html` |
+| RF-008 | A aplicação deve permitir cadastro de habilidades e competências. | Equipe | `habilidades.html` |
+| RF-009 | A aplicação deve exibir pré-visualização do currículo durante o preenchimento. | Equipe | componente de preview |
+| RF-010 | A aplicação deve permitir geração e download do currículo em PDF. | Equipe | `preview.html` / script de PDF |
 
-## Descrição das estruturas:
+### Requisitos Não Funcionais
 
-## Notícia
-|  **Nome**      | **Tipo**          | **Descrição**                             | **Exemplo**                                    |
-|:--------------:|-------------------|-------------------------------------------|------------------------------------------------|
-| Id             | Numero (Inteiro)  | Identificador único da notícia            | 1                                              |
-| Título         | Texto             | Título da notícia                         | Sistemas de Informação PUC Minas é o melhor                                   |
-| Conteúdo       | Texto             | Conteúdo da notícia                       | Sistemas de Informação da PUC Minas é eleito o melhor curso do Brasil                            |
-| Id do usuário  | Numero (Inteiro)  | Identificador do usuário autor da notícia | 1                                              |
+| ID | Descrição do Requisito | Estratégia de Implementação |
+| --- | --- | --- |
+| RNF-001 | A aplicação deve ser responsiva para celular, tablet e desktop. | CSS responsivo com media queries e layout mobile-first. |
+| RNF-002 | A aplicação deve utilizar linguagem simples e elementos visuais claros. | Textos objetivos, labels visíveis, botões consistentes e etapas curtas. |
+| RNF-003 | A interface deve apresentar bom contraste, legibilidade e navegação acessível. | Paleta com contraste adequado, foco visível e semântica HTML. |
+| RNF-004 | A aplicação deve funcionar como projeto estático, sem módulo de backend. | Implementação apenas com arquivos estáticos e lógica client-side. |
+| RNF-005 | Dados necessários ao fluxo devem ser tratados no navegador quando houver persistência. | Uso de `localStorage` para dados temporários ou locais. |
+| RNF-006 | O carregamento das páginas deve ser leve e adequado a conexões móveis. | Assets otimizados, CSS enxuto e JavaScript modular. |
 
+## Estruturas de Dados
+
+### Usuário Local
+
+| Nome | Tipo | Descrição | Exemplo |
+| :---: | --- | --- | --- |
+| id | Texto | Identificador local do usuário | `usuario-001` |
+| nome | Texto | Nome informado no cadastro | `Mariana Santos` |
+| email | Texto | E-mail usado para login | `mariana@email.com` |
+| senha | Texto | Senha armazenada localmente apenas para fins acadêmicos do protótipo | `123456` |
+
+### Currículo
+
+| Nome | Tipo | Descrição | Exemplo |
+| :---: | --- | --- | --- |
+| foto | Texto | Caminho ou base64 da imagem enviada | `foto-usuario.png` |
+| cargo | Texto | Cargo pretendido | `Auxiliar Administrativo` |
+| nome | Texto | Nome completo | `Carlos Henrique Silva` |
+| email | Texto | E-mail de contato | `carlos@email.com` |
+| telefone | Texto | Telefone de contato | `(31) 99999-9999` |
+| endereco | Texto | Cidade, bairro ou endereço resumido | `Belo Horizonte - MG` |
+| miniBio | Texto | Resumo profissional | `Profissional organizado, com experiência em atendimento.` |
+| experiencias | Lista | Experiências profissionais cadastradas | `[{ cargo, empresa, periodo, descricao }]` |
+| educacao | Lista | Formações e cursos cadastrados | `[{ curso, instituicao, periodo }]` |
+| habilidades | Lista | Competências do usuário | `["Atendimento", "Organização"]` |
+
+## Páginas Previstas
+
+- `index.html`: landing page.
+- `login.html`: login/cadastro.
+- `foto.html`: envio ou pulo de foto.
+- `detalhes.html`: dados pessoais e contato.
+- `minibio.html`: resumo profissional.
+- `experiencia.html`: experiências profissionais.
+- `educacao.html`: formação acadêmica.
+- `habilidades.html`: competências.
+- `preview.html`: prévia final e download em PDF.
+
+## Instruções de Acesso e Verificação
+
+Após a implementação, o projeto poderá ser executado abrindo o arquivo `src/index.html` no navegador ou usando uma extensão de servidor local, como Live Server.
+
+Para verificar o fluxo principal:
+
+1. Acessar a landing page.
+2. Clicar para começar o currículo.
+3. Criar uma conta ou fazer login.
+4. Enviar ou pular foto.
+5. Preencher detalhes, mini-bio, experiência, educação e habilidades.
+6. Conferir a prévia.
+7. Baixar o currículo em PDF.

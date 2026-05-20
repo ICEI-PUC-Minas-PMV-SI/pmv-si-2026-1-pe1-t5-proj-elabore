@@ -1,91 +1,91 @@
 # Especificações do Projeto
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
+Este documento apresenta a definição do problema e da solução a partir da perspectiva do usuário. A especificação do e-LABORE foi construída com base na contextualização do público-alvo, no fluxo de criação de currículo e nas funcionalidades previstas para a aplicação web.
 
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto.
-
-Caso deseje atribuir uma imagem a sua persona, utilize o site https://thispersondoesnotexist.com/
+As técnicas utilizadas nesta etapa foram: definição de personas, elaboração de histórias de usuário, identificação de requisitos funcionais e não funcionais, e registro das restrições técnicas do projeto.
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+### Persona 1: Carlos Henrique
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+Carlos Henrique tem 38 anos, ensino médio completo e trabalha de forma informal como auxiliar de serviços gerais. Está buscando uma oportunidade com carteira assinada, mas tem dificuldade para organizar suas experiências em um currículo profissional. Acessa a internet pelo celular e não costuma usar editores de texto.
 
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+**Necessidades:** criar um currículo simples, claro e bem formatado pelo celular.
+
+**Dores:** insegurança para preencher campos, dificuldade com ferramentas complexas e pouco domínio de formatação.
+
+### Persona 2: Mariana Santos
+
+Mariana Santos tem 19 anos e está procurando o primeiro emprego. Concluiu o ensino médio recentemente, fez cursos livres e participou de atividades voluntárias, mas não sabe como valorizar essas informações em um currículo.
+
+**Necessidades:** receber orientação sobre o que preencher mesmo sem experiência profissional formal.
+
+**Dores:** medo de deixar o currículo vazio e falta de exemplos acessíveis.
+
+### Persona 3: Ana Paula Ribeiro
+
+Ana Paula tem 44 anos, já trabalhou muitos anos no comércio e está tentando se recolocar no mercado. Tem experiência prática, mas não atualiza seu currículo há bastante tempo e não acompanha os modelos atuais.
+
+**Necessidades:** montar um currículo atualizado, objetivo e pronto para envio em PDF.
+
+**Dores:** dificuldade para adaptar experiências antigas a um formato atual e falta de familiaridade com plataformas digitais.
 
 ## Histórias de Usuários
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
+Com base nas personas, foram identificadas as seguintes histórias de usuário:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
+| EU COMO... | QUERO/PRECISO... | PARA... |
+| --- | --- | --- |
+| Usuário visitante | visualizar a proposta da plataforma na landing page | entender rapidamente se a ferramenta atende minha necessidade |
+| Usuário do sistema | criar uma conta ou acessar uma conta existente | iniciar o preenchimento do currículo e manter a continuidade da experiência |
+| Usuário com pouca familiaridade digital | seguir um fluxo guiado por etapas | preencher o currículo sem me perder no processo |
+| Usuário sem foto profissional | poder pular o envio de foto | continuar criando meu currículo mesmo sem imagem disponível |
+| Usuário em busca de emprego | preencher dados pessoais, contato e cargo desejado | montar a base do currículo |
+| Jovem em busca do primeiro emprego | preencher uma mini-bio com orientação | apresentar meu perfil mesmo sem experiência formal |
+| Profissional com experiência | cadastrar múltiplas experiências profissionais | valorizar minha trajetória de trabalho formal ou informal |
+| Usuário em formação | cadastrar escolaridade, cursos e instituições | mostrar minha formação acadêmica ou técnica |
+| Usuário com habilidades práticas | destacar competências em formato simples | complementar o currículo com conhecimentos relevantes |
+| Usuário revisando o documento | visualizar uma prévia do currículo em tempo real | conferir as informações antes de baixar |
+| Usuário final | baixar o currículo em PDF | enviar ou imprimir o documento para processos seletivos |
 
 ## Requisitos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
+As tabelas a seguir apresentam os requisitos funcionais e não funcionais que detalham o escopo da solução.
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade | 
-|------|-----------------------------------------|----| 
-|RF-001| A aplicação deve permitir que o usuário gerencie suas tarefas | ALTA |  
-|RF-002| A aplicação deve permitir a emissão de um relatório de tarefas realizadas no mês   | MÉDIA | 
+| ID | Descrição do Requisito | Prioridade |
+| --- | --- | --- |
+| RF-001 | A aplicação deve apresentar uma landing page com a proposta do e-LABORE e chamada para iniciar o currículo. | ALTA |
+| RF-002 | A aplicação deve permitir login e cadastro simples do usuário antes do início do preenchimento do currículo. | ALTA |
+| RF-003 | A aplicação deve permitir envio de foto do usuário, com opção de pular essa etapa. | MÉDIA |
+| RF-004 | A aplicação deve permitir o preenchimento de dados pessoais e de contato. | ALTA |
+| RF-005 | A aplicação deve permitir o preenchimento de mini-bio ou resumo profissional. | ALTA |
+| RF-006 | A aplicação deve permitir cadastro, edição e remoção de experiências profissionais. | ALTA |
+| RF-007 | A aplicação deve permitir cadastro, edição e remoção de formações acadêmicas ou cursos. | ALTA |
+| RF-008 | A aplicação deve permitir cadastro de habilidades e competências. | MÉDIA |
+| RF-009 | A aplicação deve exibir pré-visualização do currículo durante o preenchimento. | ALTA |
+| RF-010 | A aplicação deve permitir geração e download do currículo em PDF. | ALTA |
 
+### Requisitos Não Funcionais
 
-### Requisitos não Funcionais
-
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| A aplicação deve ser responsiva | MÉDIA | 
-|RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+| ID | Descrição do Requisito | Prioridade |
+| --- | --- | --- |
+| RNF-001 | A aplicação deve ser responsiva para celular, tablet e desktop. | ALTA |
+| RNF-002 | A aplicação deve utilizar linguagem simples e elementos visuais claros para usuários com baixa familiaridade digital. | ALTA |
+| RNF-003 | A interface deve apresentar bom contraste, legibilidade e navegação acessível. | ALTA |
+| RNF-004 | A aplicação deve funcionar como projeto estático, sem módulo de backend. | ALTA |
+| RNF-005 | Dados necessários ao fluxo, como login local e currículo em edição, devem ser tratados no navegador quando houver persistência. | MÉDIA |
+| RNF-006 | O carregamento das páginas deve ser leve e adequado a conexões móveis. | MÉDIA |
 
 ## Restrições
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
 
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+| ID | Restrição |
+| --- | --- |
+| 01 | O projeto deverá ser entregue até o final do semestre. |
+| 02 | Não pode ser desenvolvido um módulo de backend. |
+| 03 | O login/cadastro deve ser implementado apenas no front-end, com persistência local se necessário. |
+| 04 | O sistema deve priorizar a criação de currículo em um fluxo simples e guiado, evitando funcionalidades secundárias que aumentem a complexidade. |
+| 05 | A interface deve ser projetada primeiro para uso em dispositivos móveis. |
