@@ -1,23 +1,432 @@
 <!DOCTYPE html>
-<html lang="pt">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elabore - Landing Page</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-labore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-blue: #3b82f6;
+      --primary-hover: #2563eb;
+      --secondary-bg: #e2e8f0;
+      --secondary-hover: #cbd5e1;
+      --text-dark: #0f172a;
+      --text-gray: #334155;
+      --bg-gradient-start: #e0f2fe;
+      --bg-gradient-end: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      /* Substituído o fundo estático pelo degradê radial idêntico ao da imagem */
+      background: radial-gradient(100% 100% at 50% 0%, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 60%);
+      min-height: 100vh;
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* Cabeçalho com o logotipo */
+    header {
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #1e3a8a;
+      text-decoration: none;
+    }
+
+    .logo svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    /* Seção Principal (Hero) */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 1rem 1rem 2rem;
+      position: relative;
+    }
+
+    .sparkle-icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 32px;
+      height: 32px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 1.5rem;
+      color: var(--primary-blue);
+    }
+
+    .titulo {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .subtitulo {
+      font-size: clamp(0.95rem, 1.8vw, 1.125rem);
+      color: var(--text-gray);
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+
+    .botoes {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 4rem;
+    }
+
+    .botao {
+      padding: 0.875rem 1.75rem;
+      border-radius: 9999px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      display: inline-block;
+    }
+
+    .azul {
+      background-color: var(--primary-blue);
+      color: white;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+    }
+
+    .azul:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .cinza {
+      background-color: #dbe7f5;
+      color: #1e3a8a;
+    }
+
+    .cinza:hover {
+      background-color: #cbd9ea;
+    }
+
+    /* Container dos Mockups de Currículo */
+    .mockup-container {
+      position: relative;
+      max-width: 1000px;
+      height: 480px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .resume-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+      position: absolute;
+      width: 450px;
+      height: 380px;
+      padding: 2rem;
+      border: 1px solid #f1f5f9;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .card-left {
+      transform: translateX(-40%) translateY(30px) scale(0.9);
+      z-index: 1;
+      opacity: 0.5;
+    }
+
+    .card-right {
+      transform: translateX(40%) translateY(30px) scale(0.9);
+      z-index: 1;
+      opacity: 0.5;
+    }
+
+    .card-center {
+      z-index: 10;
+      top: -10px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+    }
+
+    /* Elementos visuais internos dos currículos */
+    .faux-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #cbd5e1;
+      background-image: url('https://i.pravatar.cc/100?img=5');
+      background-size: cover;
+    }
+
+    .faux-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--text-dark);
+    }
+
+    .faux-email {
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+
+    .faux-line {
+      height: 8px;
+      background: #f1f5f9;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .faux-line.w-full { width: 100%; }
+    .faux-line.w-3-4 { width: 75%; }
+
+    /* Badges Verdes de Otimização */
+    .floating-badge {
+      position: absolute;
+      background: white;
+      padding: 0.6rem 1.1rem;
+      border-radius: 9999px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      z-index: 20;
+      border: 1px solid #f1f5f9;
+      color: #0f172a;
+    }
+
+    .badge-icon {
+      background: #22c55e;
+      color: white;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
+    }
+
+    .badge-left { left: 8%; top: 55%; }
+    .badge-right-top { right: 10%; top: 12%; }
+    .badge-right-bottom { right: 16%; bottom: 32%; }
+
+    /* Gráfico de Medidor Circular (Score) */
+    .score-gauge {
+      position: absolute;
+      left: 18%;
+      top: 22%;
+      z-index: 30;
+      background: white;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: conic-gradient(
+        #f59e0b 0% 120deg, 
+        #22c55e 120deg 250deg, 
+        #e2e8f0 250deg 360deg
+      );
+    }
+
+    .score-gauge::before {
+      content: '';
+      position: absolute;
+      width: 118px;
+      height: 118px;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .score-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .score-number {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1;
+    }
+
+    .score-label {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* Responsividade para celulares e tablets */
+    @media (max-width: 768px) {
+      .mockup-container {
+        height: 320px;
       }
-      .background-image {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
-        display: block;
+      .card-left, .card-right, .floating-badge {
+        display: none;
       }
-    </style>
-  </head>
-  <body>
-    <img src="../../docs/img/tela-landing.png" alt="Tela de landing page" class="background-image">
-  </body>
+      .card-center {
+        width: 95%;
+        position: relative;
+        margin: 0 auto;
+      }
+      .score-gauge {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 65%;
+        width: 120px;
+        height: 120px;
+      }
+      .score-gauge::before {
+        width: 94px;
+        height: 94px;
+      }
+      .score-number {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" fill="#1e3a8a"/>
+        <path d="M15 9l-6 6M15 9l-2-2m2 2l2-2" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      e-labore
+    </a>
+  </header>
+
+  <div class="container">
+    <div class="sparkle-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3l1.912 5.813a2 2 0 001.275 1.275L21 12l-5.813 1.912a2 2 0 00-1.275 1.275L12 21l-1.912-5.813a2 2 0 00-1.275-1.275L3 12l5.813-1.912a2 2 0 001.275-1.275L12 3z"/>
+      </svg>
+    </div>
+    
+    <h1 class="titulo">Receba Mais Propostas com o<br>Construtor Profissional de Currículos</h1>
+    
+    <p class="subtitulo">Refine seu currículo instantaneamente e destaque-se para qualquer vaga com nossa ferramenta de edição e formatação profissional</p>
+    
+    <div class="botoes">
+      <a href="#" class="botao azul">Começar Agora!</a>
+      <a href="#" class="botao cinza">Ver Modelos</a>
+    </div>
+  </div>
+
+  <section class="mockup-container">
+    
+    <div class="floating-badge badge-left">
+      <div class="badge-icon">✓</div> Otimização de Currículo Inteligente
+    </div>
+    
+    <div class="floating-badge badge-right-top">
+      <div class="badge-icon">✓</div> Otimização de Currículo Inteligente
+    </div>
+    
+    <div class="floating-badge badge-right-bottom">
+      <div class="badge-icon">✓</div> Otimização de Palavras-chave
+    </div>
+
+    <div class="score-gauge">
+      <div class="score-content">
+        <div class="score-number">96%</div>
+        <div class="score-label">Excelente</div>
+      </div>
+    </div>
+
+    <div class="resume-card card-left">
+      <div class="faux-header">
+        <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=11');"></div>
+        <div>
+          <div class="faux-name">Rodrigo Silva</div>
+          <div class="faux-email">rodrigo@email.com</div>
+        </div>
+      </div>
+      <div class="faux-line w-full"></div>
+      <div class="faux-line w-3-4"></div>
+      <div class="faux-line w-full"></div>
+    </div>
+
+    <div class="resume-card card-right">
+      <div class="faux-header">
+        <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=33');"></div>
+        <div>
+          <div class="faux-name">Software Engineer</div>
+          <div class="faux-email">+1 (415) 908-2237</div>
+        </div>
+      </div>
+      <div class="faux-line w-full"></div>
+      <div class="faux-line w-3-4"></div>
+    </div>
+
+    <div class="resume-card card-center">
+      <div class="faux-header">
+        <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=47');"></div>
+        <div>
+          <div class="faux-name">Mariana Costa</div>
+          <div class="faux-email">marianacro@gmail.com</div>
+          <div class="faux-email" style="margin-top: 2px;">São Paulo, SP | +1 (415) 908-2237</div>
+        </div>
+      </div>
+      
+      <h4 style="margin-bottom: 8px; font-size: 0.85rem; color: #1e293b;">Resumo Profissional</h4>
+      <div class="faux-line w-full"></div>
+      <div class="faux-line w-3-4"></div>
+      
+      <h4 style="margin: 18px 0 8px; font-size: 0.85rem; color: #1e293b;">Experiência</h4>
+      <div class="faux-name" style="font-size: 0.85rem;">UI/UX Designer - Strato Studio</div>
+      <div class="faux-email" style="margin-bottom: 8px; color: var(--primary-blue); font-weight: 500;">San Francisco, CA | Jan 2023 - Present</div>
+      
+      <div class="faux-line w-full"></div>
+      <div class="faux-line w-3-4"></div>
+    </div>
+
+  </section>
+
+</body>
 </html>
