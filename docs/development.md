@@ -11,7 +11,7 @@ O sistema será desenvolvido como uma aplicação web estática em **HTML, CSS e
 | ID | Descrição do Requisito | Responsável | Artefato Previsto |
 | --- | --- | --- | --- |
 | RF-001 | A aplicação deve apresentar uma landing page com a proposta do e-LABORE e chamada para iniciar o currículo. | João Vitor Rodrigues Oliveira| `index.html` |
-| RF-002 | A aplicação deve permitir login e cadastro simples do usuário antes do início do preenchimento do currículo. | João Vitor Rodrigues Oliveira| `login.html` |
+| RF-002 | A aplicação deve permitir login e cadastro simples do usuário antes do início do preenchimento do currículo. | Felipe Davila Mendes| `login.html` |
 | RF-003 | A aplicação deve permitir envio de foto do usuário, com opção de pular essa etapa. | Felipe Davila Mendes| `foto.html` |
 | RF-004 | A aplicação deve permitir o preenchimento de dados pessoais e de contato. | Felipe Davila Mendes| `detalhes.html` |
 | RF-005 | A aplicação deve permitir o preenchimento de mini-bio ou resumo profissional. | Felipe Davila Mendes| `minibio.html` |
