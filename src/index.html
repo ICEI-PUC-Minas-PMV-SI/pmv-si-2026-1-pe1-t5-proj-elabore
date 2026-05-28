@@ -1,18 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>e-LABORE - Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body class="placeholder-page">
-    <main>
-      <h1>Landing Page</h1>
-      <p>Em desenvolvimento!!</p>
-    </main>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-labore - Construtor de Currículos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
 
-    <nav class="nav-arrows" data-nav-arrows aria-label="Navegação entre telas"></nav>
-    <script src="navigation.js"></script>
-  </body>
+  <header>
+    <a href="index.html" class="logo">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" fill="#1e3a8a"/>
+        <path d="M15 9l-6 6M15 9l-2-2m2 2l2-2" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      e-labore
+    </a>
+  </header>
+
+  <main class="container">
+    <div class="sparkle-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3l1.912 5.813a2 2 0 001.275 1.275L21 12l-5.813 1.912a2 2 0 00-1.275 1.275L12 21l-1.912-5.813a2 2 0 00-1.275-1.275L3 12l5.813-1.912a2 2 0 001.275-1.275L12 3z"/>
+      </svg>
+    </div>
+    
+    <h1 class="titulo">Receba Mais Propostas com o<br>Construtor Profissional de Currículos</h1>
+    
+    <p class="subtitulo">Refine seu currículo instantaneamente e destaque-se para qualquer vaga com nossa ferramenta de edição e formatação profissional</p>
+    
+    <div class="botoes">
+      <a href="login.html" id="btn-principal" class="botao azul">Começar Agora!</a>
+      <a href="preview.html" class="botao cinza">Ver Modelos</a>
+    </div>
+  </main>
+
+  <section class="mockup-container">
+    
+    <div class="floating-badge badge-left">
+      <div class="badge-icon">✓</div> Otimização de Currículo Inteligente
+    </div>
+    
+    <div class="floating-badge badge-right-top">
+      <div class="badge-icon">✓</div> Otimização de Currículo Inteligente
+    </div>
+    
+    <div class="floating-badge badge-right-bottom">
+      <div class="badge-icon">✓</div> Otimização de Palavras-chave
+    </div>
+
+    <div class="score-gauge">
+      <div class="score-content">
+        <div class="score-number">96%</div>
+        <div class="score-label">Excelente</div>
+      </div>
+    </div>
+
+    <div class="resume-card card-left">
+      <div class="faux-header">
+        <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=11');"></div>
+        <div>
+          <div class="faux-name">Rodrigo Silva</div>
+          <div class="faux-email">rodrigo@email.com</div>
+        </div>
+      </div>
+      <div class="faux-line w-full"></div>
+      <div class="faux-line w-3-4"></div>
+      <div class="faux-line w-full"></div>
+    </div>
+
+    <div class="resume-card card-right">
+      <div class="faux-header">
+        <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=33');"></div>
+        <div>
+          <div class="faux-name">Software Engineer</div>
+          <div class="faux-email">+1 (415) 908-2237</div>
+        </div>
+      </div>
+      <div class="faux-line w-full"></div>
+      <div class="faux-line w-3-4"></div>
+    </div>
+
+    <div class="resume-card card-center">
+      <div class="faux-header">
+        <div class="avatar" style="background-image: url('https://i.pravatar.cc/100?img=47');"></div>
+        <div>
+          <div class="faux-name">Mariana Costa</div>
+          <div class="faux-email">marianacro@gmail.com</div>
+          <div class="faux-email" style="margin-top: 2px;">São Paulo, SP | +1 (415) 908-2237</div>
+        </div>
+      </div>
+      
+      <h4 style="margin-bottom: 8px; font-size: 0.85rem; color: #1e293b;">Resumo Profissional</h4>
+      <div class="faux-line w-full"></div>
+      <div class="faux-line w-3-4"></div>
+      
+      <h4 style="margin: 18px 0 8px; font-size: 0.85rem; color: #1e293b;">Experiência</h4>
+      <div class="faux-name" style="font-size: 0.85rem;">UI/UX Designer - Strato Studio</div>
+      <div class="faux-email" style="margin-bottom: 8px; color: var(--primary-blue); font-weight: 500;">San Francisco, CA | Jan 2023 - Present</div>
+      
+      <div class="faux-line w-full"></div>
+      <div class="faux-line w-3-4"></div>
+    </div>
+
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const usuarioLogado = localStorage.getItem("usuarioNome");
+      const btnPrincipal = document.getElementById("btn-principal");
+
+      if (usuarioLogado && btnPrincipal) {
+        btnPrincipal.textContent = `Continuar como ${usuarioLogado}`;
+        btnPrincipal.setAttribute("href", "minibio.html"); 
+      }
+    });
+  </script>
+</body>
 </html>

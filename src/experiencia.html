@@ -1,18 +1,239 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+
+<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>e-LABORE - Experiência</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body class="placeholder-page">
-    <main>
-      <h1>Experiência</h1>
-      <p>Em desenvolvimento!!</p>
-    </main>
 
-    <nav class="nav-arrows" data-nav-arrows aria-label="Navegação entre telas"></nav>
-    <script src="navigation.js"></script>
-  </body>
+    <title>Experiência</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
+
+        body{
+            background:#f3f3f3;
+            overflow-x:hidden;
+        }
+
+        .top-nav{
+            width:100%;
+            background:white;
+            padding:18px;
+            border-bottom:1px solid #ddd;
+        }
+
+        .nav{
+            display:flex;
+            justify-content:center;
+            gap:10px;
+        }
+
+        .nav a{
+            text-decoration:none;
+            color:#444;
+            background:#ececec;
+            padding:12px 22px;
+            border-radius:30px;
+            font-weight:600;
+        }
+
+        .active{
+            background:#dfe7ff !important;
+            color:#2c4bdb !important;
+        }
+
+        .container{
+            display:flex;
+            min-height:100vh;
+        }
+
+        .left{
+            width:55%;
+            background:white;
+            padding:50px;
+        }
+
+        .right{
+            width:45%;
+            display:flex;
+            justify-content:center;
+            padding:40px;
+        }
+
+        .cv{
+            width:100%;
+            max-width:400px;
+            background:white;
+            border-radius:20px;
+            padding:35px;
+            box-shadow:0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .input-group{
+            margin-bottom:22px;
+        }
+
+        .input-group label{
+            display:block;
+            margin-bottom:8px;
+            font-weight:600;
+        }
+
+        .input-group input,
+        .input-group textarea{
+            width:100%;
+            padding:16px;
+            border:1px solid #ddd;
+            border-radius:14px;
+            font-size:16px;
+        }
+
+        textarea{
+            resize:none;
+            height:140px;
+        }
+
+        button{
+            background:#2c4bdb;
+            color:white;
+            border:none;
+            padding:16px 30px;
+            border-radius:14px;
+            font-size:16px;
+            font-weight:600;
+            cursor:pointer;
+        }
+
+        @media(max-width:1000px){
+
+            .container{
+                flex-direction:column;
+            }
+
+            .left,
+            .right{
+                width:100%;
+            }
+        }
+
+        @media(max-width:700px){
+
+            .top-nav{
+                overflow-x:auto;
+            }
+
+            .nav{
+                min-width:max-content;
+                justify-content:flex-start;
+            }
+
+            .left{
+                padding:30px 20px;
+            }
+
+            .right{
+                padding:20px;
+            }
+
+            button{
+                width:100%;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="top-nav">
+
+        <div class="nav">
+
+            <a href="detalhes.html">Seus Detalhes</a>
+            <a href="minibio.html">Mini-Bio</a>
+            <a href="#" class="active">Experiência</a>
+            <a href="educacao.html">Educação</a>
+            <a href="habilidades.html">Habilidades</a>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="left">
+
+            <h1>Experiência</h1>
+
+            <p>Adicione sua experiência profissional.</p>
+
+            <div class="input-group">
+                <label>Cargo</label>
+                <input type="text" id="cargo">
+            </div>
+
+            <div class="input-group">
+                <label>Empresa</label>
+                <input type="text" id="empresa">
+            </div>
+
+            <div class="input-group">
+                <label>Descrição</label>
+                <textarea id="descricao"></textarea>
+            </div>
+
+            <button onclick="atualizarPreview()">
+                Salvar & Avançar
+            </button>
+
+        </div>
+
+        <div class="right">
+
+            <div class="cv">
+
+                <h2 id="previewCargo">
+                    Seu Cargo
+                </h2>
+
+                <h3 id="previewEmpresa">
+                    Sua Empresa
+                </h3>
+
+                <p id="previewDescricao">
+                    Sua descrição aparecerá aqui.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function atualizarPreview(){
+
+            document.getElementById("previewCargo").innerText =
+            document.getElementById("cargo").value;
+
+            document.getElementById("previewEmpresa").innerText =
+            document.getElementById("empresa").value;
+
+            document.getElementById("previewDescricao").innerText =
+            document.getElementById("descricao").value;
+
+        }
+
+    </script>
+
+</body>
 </html>
