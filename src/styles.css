@@ -7,6 +7,9 @@
   --line: #d9e1ec;
   --panel: #ffffff;
   --page: #f7fbff;
+  --system-bg:
+    radial-gradient(circle at top, rgba(214, 238, 255, 0.95), rgba(247, 251, 255, 0.9) 42%, #ffffff 76%),
+    linear-gradient(180deg, #eaf6ff 0%, #ffffff 100%);
   --shadow: 0 22px 45px rgba(16, 45, 84, 0.14);
 }
 
@@ -41,6 +44,11 @@ a {
   font-size: 38px;
   font-weight: 800;
   letter-spacing: 0;
+}
+
+.auth-card .brand {
+  display: flex;
+  justify-content: center;
 }
 
 .brand-mark {
@@ -120,7 +128,7 @@ a {
   min-height: 100vh;
   place-items: center;
   padding: 44px 20px 100px;
-  background: white;
+  background: var(--system-bg);
 }
 
 .auth-shell {
@@ -128,18 +136,12 @@ a {
   width: min(1040px, 100%);
   min-height: 680px;
   place-items: center;
-  border-radius: 30px;
-  background: #e7f4ff;
   padding: 22px;
 }
 
 .auth-card {
   width: min(510px, 100%);
-  border: 1px solid var(--line);
-  border-radius: 28px;
-  background: white;
-  padding: 58px 72px 34px;
-  box-shadow: 18px 18px 0 rgba(8, 47, 99, 0.13);
+  padding: 24px 0 0;
 }
 
 .auth-card h1 {
@@ -160,6 +162,7 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 28px;
+  gap: 8px;
   padding: 4px;
   border-radius: 20px;
   background: #f3f6fa;
@@ -167,15 +170,16 @@ a {
 
 .segment button {
   min-height: 40px;
-  border: 0;
+  border: 1px solid #aab8c9;
   border-radius: 16px;
-  color: var(--muted);
-  background: transparent;
+  color: var(--blue-dark);
+  background: rgba(255, 255, 255, 0.7);
   cursor: pointer;
   font-weight: 700;
 }
 
 .segment button.active {
+  border-color: var(--blue);
   color: white;
   background: var(--blue);
 }
@@ -240,12 +244,17 @@ a {
   place-items: center;
   padding: 46px 18px 100px;
   background:
-    linear-gradient(rgba(247, 252, 255, 0.86), rgba(247, 252, 255, 0.92)),
-    url("../docs/img/tela-preview-final.png") center / cover no-repeat;
+    linear-gradient(rgba(247, 252, 255, 0.68), rgba(247, 252, 255, 0.88)),
+    var(--system-bg);
 }
 
 .photo-card {
   width: min(720px, 100%);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow);
+  padding: 46px;
   text-align: center;
 }
 
@@ -269,7 +278,7 @@ a {
   margin: 0 0 36px;
   border: 2px dashed #2b8bd8;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.86);
   color: var(--ink);
   cursor: pointer;
 }
@@ -306,7 +315,7 @@ a {
 
 .builder-page {
   min-height: 100vh;
-  background: #f6f8fc;
+  background: var(--system-bg);
   padding-bottom: 100px;
 }
 
@@ -360,7 +369,7 @@ a {
   display: flex;
   flex-direction: column;
   padding: 40px 38px 34px;
-  background: white;
+  background: rgba(255, 255, 255, 0.94);
 }
 
 .details-panel h1 {
@@ -431,7 +440,7 @@ a {
   display: grid;
   place-items: start center;
   padding: 38px 36px;
-  background: #d8dbe2;
+  background: rgba(216, 227, 238, 0.64);
 }
 
 .resume-page {
@@ -555,6 +564,10 @@ a {
   .auth-shell {
     min-height: auto;
     padding: 14px;
+  }
+
+  .photo-card {
+    padding: 32px 20px;
   }
 
   .auth-card h1,

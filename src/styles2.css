@@ -280,6 +280,35 @@ main.container {
   font-weight: 500;
 }
 
+.nav-arrows {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 80;
+  display: flex;
+  gap: 12px;
+}
+
+.arrow-link {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border: 1px solid #d9e1ec;
+  border-radius: 50%;
+  color: #082f63;
+  background: white;
+  box-shadow: 0 12px 24px rgba(8, 47, 99, 0.14);
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.arrow-link.disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
 @media (max-width: 768px) {
   .mockup-container { height: 320px; }
   .card-left, .card-right, .floating-badge { display: none; }
@@ -293,4 +322,9 @@ main.container {
   }
   .score-gauge::before { width: 94px; height: 94px; }
   .score-number { font-size: 1.8rem; }
+
+  .nav-arrows {
+    right: 14px;
+    bottom: 14px;
+  }
 }
