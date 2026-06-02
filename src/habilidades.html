@@ -1,237 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Habilidades</title>
-
-    <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Segoe UI',sans-serif;
-        }
-
-        body{
-            background:#f3f3f3;
-            overflow-x:hidden;
-        }
-
-        .top-nav{
-            width:100%;
-            background:white;
-            padding:18px;
-            border-bottom:1px solid #ddd;
-        }
-
-        .nav{
-            display:flex;
-            justify-content:center;
-            gap:10px;
-        }
-
-        .nav a{
-            text-decoration:none;
-            color:#444;
-            background:#ececec;
-            padding:12px 22px;
-            border-radius:30px;
-            font-weight:600;
-        }
-
-        .active{
-            background:#dfe7ff !important;
-            color:#2c4bdb !important;
-        }
-
-        .container{
-            display:flex;
-            min-height:100vh;
-        }
-
-        .left{
-            width:55%;
-            background:white;
-            padding:50px;
-        }
-
-        .right{
-            width:45%;
-            display:flex;
-            justify-content:center;
-            padding:40px;
-        }
-
-        .cv{
-            width:100%;
-            max-width:400px;
-            background:white;
-            border-radius:20px;
-            padding:35px;
-            box-shadow:0 8px 30px rgba(0,0,0,0.08);
-        }
-
-        .input-group{
-            margin-bottom:22px;
-        }
-
-        .input-group label{
-            display:block;
-            margin-bottom:8px;
-            font-weight:600;
-        }
-
-        .input-group input{
-            width:100%;
-            padding:16px;
-            border:1px solid #ddd;
-            border-radius:14px;
-            font-size:16px;
-        }
-
-        button{
-            background:#2c4bdb;
-            color:white;
-            border:none;
-            padding:16px 30px;
-            border-radius:14px;
-            font-size:16px;
-            font-weight:600;
-            cursor:pointer;
-        }
-
-        .skills{
-            margin-top:25px;
-        }
-
-        .skill{
-            display:inline-block;
-            background:#edf0ff;
-            color:#2c4bdb;
-            padding:10px 16px;
-            border-radius:999px;
-            margin:5px;
-            font-weight:600;
-        }
-
-        @media(max-width:1000px){
-
-            .container{
-                flex-direction:column;
-            }
-
-            .left,
-            .right{
-                width:100%;
-            }
-        }
-
-        @media(max-width:700px){
-
-            .top-nav{
-                overflow-x:auto;
-            }
-
-            .nav{
-                min-width:max-content;
-                justify-content:flex-start;
-            }
-
-            .left{
-                padding:30px 20px;
-            }
-
-            .right{
-                padding:20px;
-            }
-
-            button{
-                width:100%;
-            }
-        }
-
-    </style>
-
+    <title>Habilidades — CV Builder</title>
+    <link rel="stylesheet" href="styles3.css">
 </head>
-
 <body>
 
-    <div class="top-nav">
+    <!-- ================================================
+         NAVEGAÇÃO SUPERIOR
+    ================================================ -->
+    <nav class="top-nav">
+        <a href="detalhes.html" class="tab">Seus Detalhes</a>
+        <a href="minibio.html" class="tab">Mini-Bio</a>
+        <a href="experiencia.html" class="tab">Experiência</a>
+        <a href="educacao.html" class="tab">Educação</a>
+        <a href="habilidades.html" class="tab ativo">Habilidades</a>
+    </nav>
 
-        <div class="nav">
+    <!-- ================================================
+         CONTEÚDO PRINCIPAL
+    ================================================ -->
+    <div class="main">
 
-            <a href="detalhes.html">Seus Detalhes</a>
-            <a href="minibio.html">Mini-Bio</a>
-            <a href="experiencia.html">Experiência</a>
-            <a href="educacao.html">Educação</a>
-            <a href="#" class="active">Habilidades</a>
+        <!-- Painel do formulário -->
+        <div class="painel-form">
+            <h1 class="titulo">Habilidades</h1>
+            <p class="subtitulo">Destaque seis a oito de suas principais habilidades.</p>
 
+            <!-- Categoria 1: Conhecimentos de Indústria -->
+            <div class="card-categoria">
+                <div class="categoria-titulo">Conhecimentos de Indústria:</div>
+
+                <!--
+                    .tags-area é o container das tags.
+                    O onclick foca o input ao final para que o usuário
+                    possa digitar clicando em qualquer parte da área.
+                -->
+                <div class="tags-area" id="area-industria" onclick="focarInput('input-industria')">
+                    <!-- Tags inseridas pelo JS -->
+                    <input
+                        type="text"
+                        class="tag-input"
+                        id="input-industria"
+                        placeholder="Digite e pressione Enter..."
+                        onkeydown="aoApertarTecla(event, 'industria')">
+                </div>
+            </div>
+
+            <!-- Categoria 2: Ferramentas & Tecnologias -->
+            <div class="card-categoria">
+                <div class="categoria-titulo">Ferramentas &amp; Tecnologias:</div>
+                <div class="tags-area" id="area-ferramentas" onclick="focarInput('input-ferramentas')">
+                    <input
+                        type="text"
+                        class="tag-input"
+                        id="input-ferramentas"
+                        placeholder="Digite e pressione Enter..."
+                        onkeydown="aoApertarTecla(event, 'ferramentas')">
+                </div>
+            </div>
+
+            <!-- Categoria 3: Outras Skills -->
+            <div class="card-categoria">
+                <div class="categoria-titulo">Outras Skills:</div>
+                <div class="tags-area" id="area-outras" onclick="focarInput('input-outras')">
+                    <input
+                        type="text"
+                        class="tag-input"
+                        id="input-outras"
+                        placeholder="Digite e pressione Enter..."
+                        onkeydown="aoApertarTecla(event, 'outras')">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Painel de pré-visualização do currículo -->
+        <div class="painel-preview">
+            <div class="cv" id="preview-cv"></div>
         </div>
 
     </div>
 
-    <div class="container">
-
-        <div class="left">
-
-            <h1>Habilidades</h1>
-
-            <div class="input-group">
-                <label>Digite uma habilidade</label>
-                <input type="text" id="skill">
-            </div>
-
-            <button onclick="adicionarSkill()">
-                Adicionar
-            </button>
-
-        </div>
-
-        <div class="right">
-
-            <div class="cv">
-
-                <h2>Minhas Habilidades</h2>
-
-                <div class="skills" id="listaSkills"></div>
-
-            </div>
-
-        </div>
-
+    <!-- ================================================
+         NAVEGAÇÃO INFERIOR
+    ================================================ -->
+    <div class="bottom-nav">
+        <button class="btn-voltar" onclick="location.href='educacao.html'">Voltar</button>
+        <button class="btn-avancar" onclick="location.href='preview.html'">Salvar &amp; Avançar</button>
     </div>
 
-    <script>
-
-        function adicionarSkill(){
-
-            let skill =
-            document.getElementById("skill").value;
-
-            if(skill == ""){
-                return;
-            }
-
-            let div =
-            document.createElement("div");
-
-            div.className = "skill";
-
-            div.innerText = skill;
-
-            document.getElementById("listaSkills")
-            .appendChild(div);
-
-            document.getElementById("skill").value = "";
-
-        }
-
-    </script>
+    <!-- JavaScript externo desta página -->
+    <script src="habilidades.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiência — CV Builder</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+
+    <!-- ================================================
+         NAVEGAÇÃO SUPERIOR
+         A classe "ativo" marca a página atual.
+    ================================================ -->
+    <nav class="top-nav">
+        <a href="detalhes.html" class="tab">Seus Detalhes</a>
+        <a href="minibio.html" class="tab">Mini-Bio</a>
+        <a href="experiencia.html" class="tab ativo">Experiência</a>
+        <a href="educacao.html" class="tab">Educação</a>
+        <a href="habilidades.html" class="tab">Habilidades</a>
+    </nav>
+
+    <!-- ================================================
+         CONTEÚDO PRINCIPAL
+         Mobile: formulário em cima, preview embaixo.
+         Desktop: formulário à esquerda, preview à direita.
+    ================================================ -->
+    <div class="main">
+
+        <!-- Painel do formulário -->
+        <div class="painel-form">
+            <h1 class="titulo">Experiência</h1>
+            <p class="subtitulo">Revise sua experiência profissional.</p>
+
+            <!-- Os cards são inseridos aqui pelo JavaScript -->
+            <div id="lista-experiencias"></div>
+
+            <button class="btn-add" onclick="abrirModal()">
+                <span class="circulo-mais">+</span>
+                Adicionar Experiência
+            </button>
+        </div>
+
+        <!-- Painel de pré-visualização do currículo -->
+        <div class="painel-preview">
+            <div class="cv" id="preview-cv"></div>
+        </div>
+
+    </div>
+
+    <!-- ================================================
+         NAVEGAÇÃO INFERIOR
+    ================================================ -->
+    <div class="bottom-nav">
+        <button class="btn-voltar" onclick="location.href='minibio.html'">Voltar</button>
+        <button class="btn-avancar" onclick="location.href='educacao.html'">Salvar &amp; Avançar</button>
+    </div>
+
+    <!-- ================================================
+         MODAL — ADICIONAR / EDITAR EXPERIÊNCIA
+         Começa oculto. O JS adiciona a classe "aberto"
+         para exibi-lo quando necessário.
+    ================================================ -->
+    <div class="modal-fundo" id="modal-fundo" onclick="fecharAoClicarFora(event)">
+        <div class="modal">
+
+            <h2 class="modal-titulo" id="modal-titulo">Adicionar Experiência</h2>
+
+            <div class="campo">
+                <label for="campo-cargo">Cargo / Título</label>
+                <input type="text" id="campo-cargo" placeholder="Ex: Designer de Produto Sénior">
+            </div>
+
+            <div class="campo">
+                <label for="campo-empresa">Empresa</label>
+                <input type="text" id="campo-empresa" placeholder="Ex: Musemind Agency">
+            </div>
+
+            <div class="campo">
+                <label for="campo-local">Localização</label>
+                <input type="text" id="campo-local" placeholder="Ex: São Paulo, SP">
+            </div>
+
+            <div class="linha-dupla">
+                <div class="campo">
+                    <label for="campo-inicio">Início</label>
+                    <input type="text" id="campo-inicio" placeholder="MM/AAAA">
+                </div>
+                <div class="campo">
+                    <label for="campo-fim">Término</label>
+                    <input type="text" id="campo-fim" placeholder="MM/AAAA ou Presente">
+                </div>
+            </div>
+
+            <div class="campo">
+                <label for="campo-atividades">Atividades Realizadas</label>
+                <textarea id="campo-atividades" placeholder="Desenhei soluções visuais de alta fidelidade.&#10;Criei especificações para o time de desenvolvimento."></textarea>
+                <p class="dica">Uma atividade por linha.</p>
+            </div>
+
+            <div class="modal-acoes">
+                <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+                <button class="btn-salvar" onclick="salvarExperiencia()">Salvar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript externo desta página -->
+    <script src="experiencias.js"></script>
+
+</body>
+</html>
+

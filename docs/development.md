@@ -10,6 +10,16 @@ O sistema será desenvolvido como uma aplicação web estática em **HTML, CSS e
 
 | ID | Descrição do Requisito | Responsável | Artefato Previsto |
 | --- | --- | --- | --- |
+| RF-001 | A aplicação deve apresentar uma landing page com a proposta do e-LABORE e chamada para iniciar o currículo. | João Vitor | `index.html` |
+| RF-002 | A aplicação deve permitir login e cadastro simples do usuário antes do início do preenchimento do currículo. | Felipe Mendes | `login.html` |
+| RF-003 | A aplicação deve permitir envio de foto do usuário, com opção de pular essa etapa. | Felipe Mendes | `foto.html` |
+| RF-004 | A aplicação deve permitir o preenchimento de dados pessoais e de contato. | Felipe Mendes | `detalhes.html` |
+| RF-005 | A aplicação deve permitir o preenchimento de mini-bio ou resumo profissional. | Arthur Andre | `minibio.html` |
+| RF-006 | A aplicação deve permitir cadastro, edição e remoção de experiências profissionais. | Arthur Andre | `experiencia.html` |
+| RF-007 | A aplicação deve permitir cadastro, edição e remoção de formações acadêmicas ou cursos. | Arthur Andre | `educacao.html` |
+| RF-008 | A aplicação deve permitir cadastro de habilidades e competências. | Darwin Luan | `habilidades.html` |
+| RF-009 | A aplicação deve exibir pré-visualização do currículo durante o preenchimento. | Darwin Luan | componente de preview |
+| RF-010 | A aplicação deve permitir geração e download do currículo em PDF. | Darwin Luan | `preview.html` / script de PDF |
 | RF-001 | A aplicação deve apresentar uma landing page com a proposta do e-LABORE e chamada para iniciar o currículo. | João Vitor Rodrigues Oliveira| `index.html` |
 | RF-002 | A aplicação deve permitir login e cadastro simples do usuário antes do início do preenchimento do currículo. | Felipe Davila Mendes| `login.html` |
 | RF-003 | A aplicação deve permitir envio de foto do usuário, com opção de pular essa etapa. | Felipe Davila Mendes| `foto.html` |

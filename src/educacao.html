@@ -1,239 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Educação</title>
-
-    <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Segoe UI',sans-serif;
-        }
-
-        body{
-            background:#f3f3f3;
-            overflow-x:hidden;
-        }
-
-        .top-nav{
-            width:100%;
-            background:white;
-            padding:18px;
-            border-bottom:1px solid #ddd;
-        }
-
-        .nav{
-            display:flex;
-            justify-content:center;
-            gap:10px;
-        }
-
-        .nav a{
-            text-decoration:none;
-            color:#444;
-            background:#ececec;
-            padding:12px 22px;
-            border-radius:30px;
-            font-weight:600;
-        }
-
-        .active{
-            background:#dfe7ff !important;
-            color:#2c4bdb !important;
-        }
-
-        .container{
-            display:flex;
-            min-height:100vh;
-        }
-
-        .left{
-            width:55%;
-            background:white;
-            padding:50px;
-        }
-
-        .right{
-            width:45%;
-            display:flex;
-            justify-content:center;
-            padding:40px;
-        }
-
-        .cv{
-            width:100%;
-            max-width:400px;
-            background:white;
-            border-radius:20px;
-            padding:35px;
-            box-shadow:0 8px 30px rgba(0,0,0,0.08);
-        }
-
-        .input-group{
-            margin-bottom:22px;
-        }
-
-        .input-group label{
-            display:block;
-            margin-bottom:8px;
-            font-weight:600;
-        }
-
-        .input-group input,
-        .input-group textarea{
-            width:100%;
-            padding:16px;
-            border:1px solid #ddd;
-            border-radius:14px;
-            font-size:16px;
-        }
-
-        textarea{
-            resize:none;
-            height:120px;
-        }
-
-        button{
-            background:#2c4bdb;
-            color:white;
-            border:none;
-            padding:16px 30px;
-            border-radius:14px;
-            font-size:16px;
-            font-weight:600;
-            cursor:pointer;
-        }
-
-        @media(max-width:1000px){
-
-            .container{
-                flex-direction:column;
-            }
-
-            .left,
-            .right{
-                width:100%;
-            }
-        }
-
-        @media(max-width:700px){
-
-            .top-nav{
-                overflow-x:auto;
-            }
-
-            .nav{
-                min-width:max-content;
-                justify-content:flex-start;
-            }
-
-            .left{
-                padding:30px 20px;
-            }
-
-            .right{
-                padding:20px;
-            }
-
-            button{
-                width:100%;
-            }
-        }
-
-    </style>
-
+    <title>Educação — CV Builder</title>
+    <link rel="stylesheet" href="styles3.css">
 </head>
-
 <body>
 
-    <div class="top-nav">
+    <!-- ================================================
+         NAVEGAÇÃO SUPERIOR
+    ================================================ -->
+    <nav class="top-nav">
+        <a href="detalhes.html" class="tab">Seus Detalhes</a>
+        <a href="minibio.html" class="tab">Mini-Bio</a>
+        <a href="experiencia.html" class="tab">Experiência</a>
+        <a href="educacao.html" class="tab ativo">Educação</a>
+        <a href="habilidades.html" class="tab">Habilidades</a>
+    </nav>
 
-        <div class="nav">
+    <!-- ================================================
+         CONTEÚDO PRINCIPAL
+    ================================================ -->
+    <div class="main">
 
-            <a href="detalhes.html">Seus Detalhes</a>
-            <a href="minibio.html">Mini-Bio</a>
-            <a href="experiencia.html">Experiência</a>
-            <a href="#" class="active">Educação</a>
-            <a href="habilidades.html">Habilidades</a>
+        <!-- Painel do formulário -->
+        <div class="painel-form">
+            <h1 class="titulo">Educação</h1>
+            <p class="subtitulo">Revise seu histórico educacional.</p>
 
-        </div>
+            <!-- Os cards são inseridos aqui pelo JavaScript -->
+            <div id="lista-educacao"></div>
 
-    </div>
-
-    <div class="container">
-
-        <div class="left">
-
-            <h1>Educação</h1>
-
-            <p>Adicione sua formação acadêmica.</p>
-
-            <div class="input-group">
-                <label>Curso</label>
-                <input type="text" id="curso">
-            </div>
-
-            <div class="input-group">
-                <label>Instituição</label>
-                <input type="text" id="instituicao">
-            </div>
-
-            <div class="input-group">
-                <label>Descrição</label>
-                <textarea id="descricao"></textarea>
-            </div>
-
-            <button onclick="atualizarPreview()">
-                Salvar & Avançar
+            <button class="btn-add" onclick="abrirModal()">
+                <span class="circulo-mais">+</span>
+                Adicionar Educação
             </button>
-
         </div>
 
-        <div class="right">
-
-            <div class="cv">
-
-                <h2 id="previewCurso">
-                    Seu Curso
-                </h2>
-
-                <h3 id="previewInstituicao">
-                    Sua Instituição
-                </h3>
-
-                <p id="previewDescricao">
-                    Sua formação acadêmica aparecerá aqui.
-                </p>
-
-            </div>
-
+        <!-- Painel de pré-visualização do currículo -->
+        <div class="painel-preview">
+            <div class="cv" id="preview-cv"></div>
         </div>
 
     </div>
 
-    <script>
+    <!-- ================================================
+         NAVEGAÇÃO INFERIOR
+    ================================================ -->
+    <div class="bottom-nav">
+        <button class="btn-voltar" onclick="location.href='experiencia.html'">Voltar</button>
+        <button class="btn-avancar" onclick="location.href='habilidades.html'">Salvar &amp; Avançar</button>
+    </div>
 
-        function atualizarPreview(){
+    <!-- ================================================
+         MODAL — ADICIONAR / EDITAR FORMAÇÃO
+    ================================================ -->
+    <div class="modal-fundo" id="modal-fundo" onclick="fecharAoClicarFora(event)">
+        <div class="modal">
 
-            document.getElementById("previewCurso").innerText =
-            document.getElementById("curso").value;
+            <h2 class="modal-titulo" id="modal-titulo">Adicionar Educação</h2>
 
-            document.getElementById("previewInstituicao").innerText =
-            document.getElementById("instituicao").value;
+            <div class="campo">
+                <label for="campo-curso">Curso / Formação</label>
+                <input type="text" id="campo-curso" placeholder="Ex: BFA Design Industrial">
+            </div>
 
-            document.getElementById("previewDescricao").innerText =
-            document.getElementById("descricao").value;
+            <div class="campo">
+                <label for="campo-instituicao">Instituição</label>
+                <input type="text" id="campo-instituicao" placeholder="Ex: Instituto Rhode Island">
+            </div>
 
-        }
+            <div class="linha-dupla">
+                <div class="campo">
+                    <label for="campo-local">Localização</label>
+                    <input type="text" id="campo-local" placeholder="Ex: Providence, RI">
+                </div>
+                <div class="campo">
+                    <label for="campo-ano">Ano de Conclusão</label>
+                    <input type="text" id="campo-ano" placeholder="Ex: 2013">
+                </div>
+            </div>
 
-    </script>
+            <div class="campo">
+                <label for="campo-destaques">Destaques</label>
+                <textarea id="campo-destaques" placeholder="Top 3% da classe GPA&#10;Bolsista integral..."></textarea>
+                <p class="dica">Um destaque por linha.</p>
+            </div>
+
+            <div class="modal-acoes">
+                <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+                <button class="btn-salvar" onclick="salvarFormacao()">Salvar</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript externo desta página -->
+    <script src="educacao.js"></script>
 
 </body>
 </html>
+

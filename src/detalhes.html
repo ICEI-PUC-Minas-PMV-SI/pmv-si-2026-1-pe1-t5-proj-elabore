@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-LABORE - Seus Detalhes</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css2a4.css">
   </head>
   <body class="builder-page">
     <nav class="stepbar" aria-label="Etapas do currículo">
@@ -21,15 +21,16 @@
         <p class="subtitle">Como os empregadores devem contatá-lo?</p>
 
         <div class="avatar-row">
-          <div class="avatar" aria-label="Foto do usuário">MA</div>
-          <button class="avatar-add" type="button" aria-label="Adicionar foto" data-dev-button>+</button>
+          <div class="avatar" aria-label="Foto do usuário" data-details-avatar>MA</div>
+          <button class="avatar-add" type="button" aria-label="Adicionar foto" data-avatar-edit>+</button>
         </div>
 
-        <form class="form-grid">
+        <form class="form-grid" id="form-detalhes" data-details-form>
           <div class="field">
             <label for="cargo">Cargo desejado</label>
             <select id="cargo" name="cargo">
-              <option>Designer de Produto Sênior</option>
+              <option>Analista de Marketing Digital</option>
+              <option>Assistente Administrativo</option>
               <option>Auxiliar Administrativo</option>
               <option>Atendente</option>
               <option>Desenvolvedor Front-end</option>
@@ -39,76 +40,76 @@
           <div class="two-columns">
             <div class="field">
               <label for="primeiro-nome">Primeiro Nome</label>
-              <input id="primeiro-nome" name="primeiro-nome" type="text" value="Maksud">
+              <input id="primeiro-nome" name="primeiro-nome" type="text" value="Ana Paula">
             </div>
 
             <div class="field">
               <label for="sobrenome">Sobrenome</label>
-              <input id="sobrenome" name="sobrenome" type="text" value="Alam">
+              <input id="sobrenome" name="sobrenome" type="text" value="Santos">
             </div>
           </div>
 
           <div class="two-columns">
             <div class="field">
               <label for="email">Email</label>
-              <input id="email" name="email" type="email" value="maksud@musemind.agency">
+              <input id="email" name="email" type="email" value="ana.santos@email.com">
             </div>
 
             <div class="field">
-              <label for="telefone">Phone</label>
-              <input id="telefone" name="telefone" type="tel" value="+880 123 456 7890">
+              <label for="telefone">Telefone</label>
+              <input id="telefone" name="telefone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="15" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" required value="(31) 99876-5432">
             </div>
           </div>
 
           <div class="field">
             <label for="endereco">Endereço</label>
-            <input id="endereco" name="endereco" type="text" value="Daca, Bangladesh">
+            <input id="endereco" name="endereco" type="text" value="Belo Horizonte, MG">
           </div>
         </form>
 
         <div class="details-actions">
           <a class="btn secondary" href="foto.html">Voltar</a>
-          <a class="btn" href="minibio.html">Salvar &amp; Avançar</a>
+          <button class="btn" type="submit" form="form-detalhes">Salvar &amp; Avançar</button>
         </div>
       </section>
 
       <aside class="preview-panel" aria-label="Prévia do currículo">
         <article class="resume-page">
           <header class="resume-head">
-            <div class="resume-photo" aria-hidden="true">MA</div>
-            <div class="resume-contact">
-              Daca, Bangladesh<br>
-              +880 123 456 7890<br>
-              maksud@musemind.agency
+            <div class="resume-photo" aria-hidden="true" data-resume-photo>AS</div>
+            <div class="resume-contact" data-resume-contact>
+              Belo Horizonte, MG<br>
+              (31) 99876-5432<br>
+              ana.santos@email.com
             </div>
           </header>
 
-          <h2 class="resume-name">MAKSUD ALAM</h2>
-          <p class="resume-role">Designer de Produto Sênior</p>
+          <h2 class="resume-name" data-resume-name>ANA PAULA SANTOS</h2>
+          <p class="resume-role" data-resume-role>Analista de Marketing Digital</p>
 
           <section class="resume-section">
             <h2>Sobre</h2>
-            <p>Trabalho como Designer de Produto Sênior e acompanho projetos digitais com foco em clareza, organização e experiência do usuário.</p>
+            <p>Trabalho com marketing digital, organizo campanhas e acompanho indicadores para melhorar a comunicação com clientes.</p>
           </section>
 
           <section class="resume-section">
             <h2>Experiencia</h2>
-            <p><strong>Designer de Produto Sênior: Musemind Digital Agency</strong></p>
+            <p><strong>Analista de Marketing Digital: Agência Horizonte</strong></p>
             <ul>
-              <li>Designer responsavel por telas, sistemas visuais e melhorias de fluxo.</li>
-              <li>Colaboração com equipes para entregar interfaces simples e consistentes.</li>
+              <li>Planejamento de campanhas digitais para pequenas e médias empresas.</li>
+              <li>Acompanhamento de relatórios e melhorias em conteúdos para redes sociais.</li>
             </ul>
           </section>
 
           <section class="resume-section">
             <h2>Educação</h2>
-            <p>BFA Design Industrial - 2003</p>
+            <p>Publicidade e Propaganda - 2021</p>
           </section>
         </article>
       </aside>
     </main>
 
-    <nav class="nav-arrows" data-nav-arrows aria-label="Navegação entre telas"></nav>
+    <script src="telas2a4.js"></script>
     <script src="navigation.js"></script>
   </body>
 </html>

@@ -1,0 +1,358 @@
+/* -------------------------------------------------------
+   DADOS PADRÃO
+   Usados para preencher a página na primeira vez
+   que o usuário a abre (localStorage vazio).
+------------------------------------------------------- */
+var dadosPadrao = {
+    nome: "Maksud Alam",
+    titulo: "Designer de Produto Sénior",
+    cidade: "Daca, Bangladesh",
+    telefone: "+880 123 456 7890",
+    email: "maksud@musemind.agency",
+    bio: "Sou Designer de Produto Sénior na Musemind, criando experiências significativas para clientes.",
+    experiencias: [
+        {
+            id: 1,
+            cargo: "Designer de Produto Sénior",
+            empresa: "Musemind Agency",
+            local: "Daca, Bangladesh",
+            inicio: "02/2021",
+            fim: "Presente",
+            atividades: [
+                "Desenhei soluções visuais de alta fidelidade.",
+                "Criei especificações de design para o time de desenvolvimento."
+            ]
+        },
+        {
+            id: 2,
+            cargo: "Designer de Produto",
+            empresa: "Lunchbox",
+            local: "Nova York, NY",
+            inicio: "10/2018",
+            fim: "01/2021",
+            atividades: [
+                "Desenhei produtos digitais para a indústria hoteleira.",
+                "Colaborei com desenvolvedores para garantir qualidade do design."
+            ]
+        }
+    ],
+    educacao: [],
+    habilidades: { industria: [], ferramentas: [], outras: [] }
+};
+
+
+/* -------------------------------------------------------
+   lerDados()
+   Lê os dados salvos no localStorage.
+   Se ainda não houver nada salvo, retorna
+   uma cópia dos dadosPadrao.
+------------------------------------------------------- */
+function lerDados() {
+    var salvo = localStorage.getItem("curriculo");
+    if (salvo) {
+        return JSON.parse(salvo);
+    }
+    return JSON.parse(JSON.stringify(dadosPadrao));
+}
+
+
+/* -------------------------------------------------------
+   salvarDados(dados)
+   Converte o objeto "dados" para texto (JSON)
+   e grava no localStorage do navegador.
+------------------------------------------------------- */
+function salvarDados(dados) {
+    localStorage.setItem("curriculo", JSON.stringify(dados));
+}
+
+
+/* -------------------------------------------------------
+   renderizarLista()
+   Lê as experiências salvas e exibe cada uma
+   como um card na tela. Também atualiza o
+   mini-currículo de preview.
+------------------------------------------------------- */
+function renderizarLista() {
+    var dados = lerDados();
+    var container = document.getElementById("lista-experiencias");
+
+    /* Limpa o conteúdo anterior antes de redesenhar */
+    container.innerHTML = "";
+
+    /* Percorre cada experiência e cria um card */
+    dados.experiencias.forEach(function(exp) {
+
+        /* Monta os itens da lista de atividades (máximo 2 no card) */
+        var atividadesHtml = "";
+        var limite = Math.min(exp.atividades.length, 2);
+        for (var i = 0; i < limite; i++) {
+            atividadesHtml += "<li>" + escaparHtml(exp.atividades[i]) + "</li>";
+        }
+
+        /* Cria o elemento div do card */
+        var card = document.createElement("div");
+        card.className = "card";
+
+        /* Preenche o HTML interno do card */
+        card.innerHTML =
+            '<div class="card-acoes">'
+          + '<button class="btn-icone" title="Editar" onclick="abrirModalEdicao(' + exp.id + ')">'
+          + iconeLapis()
+          + '</button>'
+          + '<button class="btn-icone deletar" title="Excluir" onclick="excluirExperiencia(' + exp.id + ')">'
+          + iconeLixo()
+          + '</button>'
+          + '</div>'
+          + '<div class="card-titulo">' + escaparHtml(exp.cargo) + ', ' + escaparHtml(exp.empresa) + '</div>'
+          + '<div class="card-meta">' + escaparHtml(exp.local) + ' &bull; ' + escaparHtml(exp.inicio) + ' &ndash; ' + escaparHtml(exp.fim) + '</div>'
+          + '<ul class="card-bullets">' + atividadesHtml + '</ul>';
+
+        container.appendChild(card);
+    });
+
+    /* Atualiza o mini-currículo à direita */
+    renderizarPreview();
+}
+
+
+/* -------------------------------------------------------
+   renderizarPreview()
+   Monta o HTML do mini-currículo com base nos
+   dados salvos e o insere no painel de preview.
+------------------------------------------------------- */
+function renderizarPreview() {
+    var dados = lerDados();
+    var preview = document.getElementById("preview-cv");
+
+    /* Monta cada item de experiência para o mini-CV */
+    var expHtml = "";
+    dados.experiencias.forEach(function(exp) {
+        var atHtml = "";
+        var limite = Math.min(exp.atividades.length, 2);
+        for (var i = 0; i < limite; i++) {
+            atHtml += "<li style='font-size:5.5px;color:#444;'>" + escaparHtml(exp.atividades[i]) + "</li>";
+        }
+        expHtml +=
+            '<div class="cv-item">'
+          + '<div class="cv-item-titulo">' + escaparHtml(exp.cargo) + ', ' + escaparHtml(exp.empresa) + '</div>'
+          + '<div class="cv-item-meta">' + escaparHtml(exp.local) + ' | ' + escaparHtml(exp.inicio) + ' &ndash; ' + escaparHtml(exp.fim) + '</div>'
+          + '<ul style="list-style:disc;padding-left:7px;">' + atHtml + '</ul>'
+          + '</div>';
+    });
+
+    if (expHtml === "") {
+        expHtml = '<span style="font-size:6px;color:#ccc;">Nenhuma experiência cadastrada.</span>';
+    }
+
+    /* Monta o HTML completo do mini-CV */
+    preview.innerHTML =
+        '<div class="cv-header">'
+      + '<img class="cv-foto" src="https://i.pravatar.cc/80?img=11" alt="Foto">'
+      + '<div>'
+      + '<div class="cv-nome">' + escaparHtml(dados.nome || "Seu Nome") + '</div>'
+      + '<div class="cv-cargo-txt">' + escaparHtml(dados.titulo || "Seu Cargo") + '</div>'
+      + '</div>'
+      + '<div class="cv-contato">'
+      + escaparHtml(dados.cidade || "") + '<br>'
+      + escaparHtml(dados.telefone || "") + '<br>'
+      + escaparHtml(dados.email || "")
+      + '</div>'
+      + '</div>'
+      + '<div class="cv-secao">'
+      + '<div class="cv-label-col"><div class="cv-label">SOBRE</div></div>'
+      + '<div class="cv-corpo"><div class="cv-bio">' + escaparHtml(dados.bio || "") + '</div></div>'
+      + '</div>'
+      + '<div class="cv-secao">'
+      + '<div class="cv-label-col"><div class="cv-label">EXP.</div></div>'
+      + '<div class="cv-corpo">'
+      + '<div class="cv-sec-titulo ativo">Experiência</div>'
+      + expHtml
+      + '</div>'
+      + '</div>';
+}
+
+
+/* -------------------------------------------------------
+   Variável de controle do modal.
+   Armazena o ID da experiência sendo editada.
+   Vale null quando é uma nova experiência.
+------------------------------------------------------- */
+var idEmEdicao = null;
+
+
+/* -------------------------------------------------------
+   abrirModal()
+   Abre o modal com os campos em branco
+   para adicionar uma nova experiência.
+------------------------------------------------------- */
+function abrirModal() {
+    idEmEdicao = null;
+    document.getElementById("modal-titulo").textContent = "Adicionar Experiência";
+    document.getElementById("campo-cargo").value = "";
+    document.getElementById("campo-empresa").value = "";
+    document.getElementById("campo-local").value = "";
+    document.getElementById("campo-inicio").value = "";
+    document.getElementById("campo-fim").value = "";
+    document.getElementById("campo-atividades").value = "";
+    document.getElementById("modal-fundo").classList.add("aberto");
+    document.getElementById("campo-cargo").focus();
+}
+
+
+/* -------------------------------------------------------
+   abrirModalEdicao(id)
+   Abre o modal já preenchido com os dados
+   da experiência cujo ID foi passado.
+------------------------------------------------------- */
+function abrirModalEdicao(id) {
+    var dados = lerDados();
+    var exp = dados.experiencias.find(function(e) { return e.id === id; });
+    if (!exp) return;
+
+    idEmEdicao = id;
+    document.getElementById("modal-titulo").textContent = "Editar Experiência";
+    document.getElementById("campo-cargo").value = exp.cargo;
+    document.getElementById("campo-empresa").value = exp.empresa;
+    document.getElementById("campo-local").value = exp.local;
+    document.getElementById("campo-inicio").value = exp.inicio;
+    document.getElementById("campo-fim").value = exp.fim;
+    document.getElementById("campo-atividades").value = exp.atividades.join("\n");
+    document.getElementById("modal-fundo").classList.add("aberto");
+    document.getElementById("campo-cargo").focus();
+}
+
+
+/* -------------------------------------------------------
+   fecharModal()
+   Fecha o modal removendo a classe "aberto".
+------------------------------------------------------- */
+function fecharModal() {
+    document.getElementById("modal-fundo").classList.remove("aberto");
+    idEmEdicao = null;
+}
+
+
+/* -------------------------------------------------------
+   fecharAoClicarFora(evento)
+   Fecha o modal quando o usuário clica no fundo
+   escuro (fora da caixa branca do modal).
+------------------------------------------------------- */
+function fecharAoClicarFora(evento) {
+    if (evento.target === document.getElementById("modal-fundo")) {
+        fecharModal();
+    }
+}
+
+
+/* -------------------------------------------------------
+   salvarExperiencia()
+   Lê os valores dos campos do modal e salva
+   a experiência (nova ou editada) no localStorage.
+------------------------------------------------------- */
+function salvarExperiencia() {
+    var cargo = document.getElementById("campo-cargo").value.trim();
+    var empresa = document.getElementById("campo-empresa").value.trim();
+    var local = document.getElementById("campo-local").value.trim();
+    var inicio = document.getElementById("campo-inicio").value.trim();
+    var fim = document.getElementById("campo-fim").value.trim();
+    var textoAtiv = document.getElementById("campo-atividades").value.trim();
+
+    /* Validação básica: cargo e empresa são obrigatórios */
+    if (!cargo || !empresa) {
+        alert("Preencha pelo menos o cargo e a empresa.");
+        return;
+    }
+
+    /* Cada linha do textarea vira um item da lista */
+    var atividades = textoAtiv
+        .split("\n")
+        .map(function(linha) { return linha.trim(); })
+        .filter(function(linha) { return linha !== ""; });
+
+    var dados = lerDados();
+
+    if (idEmEdicao !== null) {
+        /* Edição: encontra e substitui a experiência existente */
+        var indice = dados.experiencias.findIndex(function(e) { return e.id === idEmEdicao; });
+        if (indice !== -1) {
+            dados.experiencias[indice] = {
+                id: idEmEdicao, cargo: cargo, empresa: empresa,
+                local: local, inicio: inicio, fim: fim, atividades: atividades
+            };
+        }
+    } else {
+        /* Nova: adiciona ao final com ID único baseado no horário atual */
+        dados.experiencias.push({
+            id: Date.now(), cargo: cargo, empresa: empresa,
+            local: local, inicio: inicio, fim: fim, atividades: atividades
+        });
+    }
+
+    salvarDados(dados);
+    fecharModal();
+    renderizarLista();
+}
+
+
+/* -------------------------------------------------------
+   excluirExperiencia(id)
+   Remove a experiência com o ID informado
+   após pedir confirmação ao usuário.
+------------------------------------------------------- */
+function excluirExperiencia(id) {
+    if (!confirm("Deseja remover esta experiência?")) return;
+    var dados = lerDados();
+    dados.experiencias = dados.experiencias.filter(function(e) { return e.id !== id; });
+    salvarDados(dados);
+    renderizarLista();
+}
+
+
+/* -------------------------------------------------------
+   escaparHtml(texto)
+   Converte caracteres especiais do HTML
+   (como < > & ") para que não quebrem a página.
+   Ex: "<script>" vira "&lt;script&gt;"
+------------------------------------------------------- */
+function escaparHtml(texto) {
+    return String(texto)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+}
+
+
+/* -------------------------------------------------------
+   iconeLapis() / iconeLixo()
+   Retornam o código SVG dos ícones usados
+   nos botões de editar e excluir.
+------------------------------------------------------- */
+function iconeLapis() {
+    return '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">'
+         + '<path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>'
+         + '<path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>'
+         + '</svg>';
+}
+
+function iconeLixo() {
+    return '<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">'
+         + '<polyline points="3 6 5 6 21 6"/>'
+         + '<path d="M19 6l-1 14H6L5 6"/>'
+         + '<path d="M10 11v6M14 11v6"/>'
+         + '<path d="M9 6V4h6v2"/>'
+         + '</svg>';
+}
+
+
+/* -------------------------------------------------------
+   INICIALIZAÇÃO
+   Executado assim que o arquivo JS é carregado.
+   Se o localStorage estiver vazio, salva os dados
+   padrão. Depois renderiza a lista na tela.
+------------------------------------------------------- */
+if (!localStorage.getItem("curriculo")) {
+    salvarDados(JSON.parse(JSON.stringify(dadosPadrao)));
+}
+
+renderizarLista();

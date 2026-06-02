@@ -249,6 +249,7 @@ a {
 }
 
 .photo-card {
+  position: relative;
   width: min(720px, 100%);
   border: 1px solid var(--line);
   border-radius: 30px;
@@ -256,6 +257,30 @@ a {
   box-shadow: var(--shadow);
   padding: 46px;
   text-align: center;
+}
+
+.photo-back {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--blue-dark);
+  background: white;
+  box-shadow: 0 8px 18px rgba(8, 47, 99, 0.1);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.photo-back:hover {
+  border-color: var(--blue);
+  background: var(--blue-soft);
 }
 
 .photo-card h1 {
@@ -276,11 +301,24 @@ a {
   min-height: 185px;
   place-items: center;
   margin: 0 0 36px;
+  padding: 28px;
   border: 2px dashed #2b8bd8;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.86);
   color: var(--ink);
   cursor: pointer;
+  position: relative;
+}
+
+.drop-zone > span {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  line-height: 1.35;
 }
 
 .drop-zone input {
@@ -296,16 +334,48 @@ a {
   width: 54px;
   height: 54px;
   place-items: center;
-  margin: 0 auto 18px;
+  margin: 2px auto 8px;
   border-radius: 50%;
   color: var(--blue);
   background: #d7ecff;
   font-size: 28px;
 }
 
+.photo-preview {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.photo-preview[hidden] {
+  display: none;
+}
+
+.photo-preview img {
+  width: 104px;
+  height: 104px;
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 8px 18px rgba(8, 47, 99, 0.16);
+  object-fit: cover;
+}
+
 .drop-zone strong {
   color: var(--blue-dark);
   text-decoration: underline;
+}
+
+.photo-instructions {
+  display: block;
+  max-width: 100%;
+  text-align: center;
+}
+
+.drop-zone [data-photo-name] {
+  display: block;
+  max-width: 100%;
+  color: var(--muted);
+  font-size: 15px;
+  overflow-wrap: anywhere;
 }
 
 .photo-actions {
@@ -343,6 +413,7 @@ a {
   background: #eeeef4;
   font-weight: 700;
   text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
 }
 
 .stepbar a:first-child {
@@ -357,6 +428,28 @@ a {
   color: var(--ink);
   background: white;
   border-color: #1d65c1;
+}
+
+.stepbar a.completed {
+  color: white;
+  border-color: #1d65c1;
+  background: linear-gradient(180deg, #2d91e6, #1c73c5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32);
+}
+
+.stepbar a.locked {
+  color: #858b96;
+  background: #eeeef4;
+  border-color: #dedee7;
+  cursor: not-allowed;
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.stepbar a.active.locked {
+  pointer-events: auto;
+  cursor: default;
+  opacity: 1;
 }
 
 .builder-layout {
@@ -402,6 +495,14 @@ a {
   font-weight: 800;
 }
 
+.avatar img,
+.resume-photo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .avatar-add {
   display: grid;
   width: 46px;
@@ -428,12 +529,57 @@ a {
   display: flex;
   justify-content: space-between;
   gap: 18px;
-  margin-top: auto;
-  padding-top: 48px;
+  margin-top: 28px;
+  padding-top: 0;
 }
 
 .details-actions .btn {
   min-width: 170px;
+}
+
+.bio-form {
+  gap: 22px;
+}
+
+.bio-textarea {
+  min-height: 260px;
+  line-height: 1.55;
+}
+
+.bio-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.bio-examples h2 {
+  margin: 0 0 12px;
+  color: var(--blue-dark);
+  font-size: 17px;
+}
+
+.bio-example-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.bio-chip {
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--blue-dark);
+  background: white;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0 18px;
+}
+
+.bio-chip:hover {
+  border-color: var(--blue);
+  background: var(--blue-soft);
 }
 
 .preview-panel {
@@ -515,6 +661,11 @@ a {
   line-height: 1.55;
 }
 
+.resume-section-active {
+  border-left: 4px solid var(--blue);
+  padding-left: 16px;
+}
+
 .placeholder-page {
   display: grid;
   min-height: 100vh;
@@ -552,7 +703,7 @@ a {
 
   .details-actions {
     margin-top: 26px;
-    padding-top: 20px;
+    padding-top: 0;
   }
 }
 
@@ -568,6 +719,10 @@ a {
 
   .photo-card {
     padding: 32px 20px;
+  }
+
+  .drop-zone {
+    padding: 22px 16px;
   }
 
   .auth-card h1,
@@ -587,6 +742,11 @@ a {
 
   .details-actions .btn {
     width: 100%;
+  }
+
+  .bio-meta {
+    flex-direction: column;
+    gap: 4px;
   }
 
   .nav-arrows {

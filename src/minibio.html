@@ -3,16 +3,89 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>e-LABORE - Mini-Bio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css2a4.css">
   </head>
-  <body class="placeholder-page">
-    <main>
-      <h1>Mini-Bio</h1>
-      <p>Em desenvolvimento!!</p>
+  <body class="builder-page">
+    <nav class="stepbar" aria-label="Etapas do currículo">
+      <a href="detalhes.html">Seus Detalhes</a>
+      <a class="active" href="minibio.html">Mini-Bio</a>
+      <a href="experiencia.html">Experiência</a>
+      <a href="educacao.html">Educação</a>
+      <a href="habilidades.html">Habilidades</a>
+    </nav>
+
+    <main class="builder-layout">
+      <section class="details-panel bio-panel" aria-labelledby="bio-title">
+        <h1 id="bio-title">Resumo profissional</h1>
+        <p class="subtitle">Apresente seu perfil em poucas linhas para abrir o currículo com clareza.</p>
+
+        <form class="form-grid bio-form" id="form-minibio" data-minibio-form>
+          <div class="field">
+            <label for="minibio">Mini-Bio</label>
+            <textarea id="minibio" name="minibio" class="bio-textarea" maxlength="700" required data-minibio-input></textarea>
+            <div class="bio-meta">
+              <span data-bio-count>0/700 caracteres</span>
+              <span data-bio-status>Salvo no navegador</span>
+            </div>
+          </div>
+
+          <div class="bio-examples" aria-label="Sugestões de mini-bio">
+            <h2>Sugestões rápidas</h2>
+            <div class="bio-example-list">
+              <button type="button" class="bio-chip" data-bio-example="Trabalho com marketing digital, organizo campanhas e acompanho indicadores para melhorar a comunicação com clientes. Tenho experiência com redes sociais, relatórios de desempenho e criação de conteúdos para empresas brasileiras.">Marketing digital</button>
+              <button type="button" class="bio-chip" data-bio-example="Profissional com experiência em atendimento ao cliente, organização de rotinas administrativas e comunicação clara com equipes. Busco contribuir com responsabilidade, pontualidade e foco em bons resultados.">Atendimento</button>
+              <button type="button" class="bio-chip" data-bio-example="Estudante em início de carreira, com interesse em aprender, colaborar em equipe e desenvolver habilidades profissionais. Tenho facilidade com organização, comunicação e uso de ferramentas digitais.">Primeiro emprego</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="details-actions">
+          <a class="btn secondary" href="detalhes.html">Voltar</a>
+          <button class="btn" type="submit" form="form-minibio">Salvar &amp; Avançar</button>
+        </div>
+      </section>
+
+      <aside class="preview-panel" aria-label="Prévia do currículo">
+        <article class="resume-page">
+          <header class="resume-head">
+            <div class="resume-photo" aria-hidden="true" data-minibio-photo>AS</div>
+            <div class="resume-contact" data-minibio-contact>
+              Belo Horizonte, MG<br>
+              (31) 99876-5432<br>
+              ana.santos@email.com
+            </div>
+          </header>
+
+          <h2 class="resume-name" data-minibio-name>ANA PAULA SANTOS</h2>
+          <p class="resume-role" data-minibio-role>Analista de Marketing Digital</p>
+
+          <section class="resume-section resume-section-active">
+            <h2>Sobre</h2>
+            <p data-minibio-preview>Trabalho com marketing digital, organizo campanhas e acompanho indicadores para melhorar a comunicação com clientes.</p>
+          </section>
+
+          <section class="resume-section">
+            <h2>Experiência</h2>
+            <p><strong>Analista de Marketing Digital: Agência Horizonte</strong></p>
+            <ul>
+              <li>Planejamento de campanhas digitais para pequenas e médias empresas.</li>
+              <li>Acompanhamento de relatórios e melhorias em conteúdos para redes sociais.</li>
+            </ul>
+          </section>
+
+          <section class="resume-section">
+            <h2>Educação</h2>
+            <p>Publicidade e Propaganda - 2021</p>
+          </section>
+        </article>
+      </aside>
     </main>
 
-    <nav class="nav-arrows" data-nav-arrows aria-label="Navegação entre telas"></nav>
+    <script src="telas2a4.js"></script>
     <script src="navigation.js"></script>
   </body>
 </html>

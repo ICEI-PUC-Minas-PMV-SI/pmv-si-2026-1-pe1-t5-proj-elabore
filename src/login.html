@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-LABORE - Login/Cadastro</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css2a4.css">
   </head>
   <body class="auth-page">
     <main class="auth-shell">
@@ -22,7 +22,7 @@
           <button type="button" data-auth-tab="signup">Criar conta</button>
         </div>
 
-        <form class="form-grid">
+        <form class="form-grid" data-auth-form>
           <div class="field" data-name-field hidden>
             <label for="nome">Nome</label>
             <input id="nome" name="nome" type="text" placeholder="Seu nome">
@@ -38,14 +38,14 @@
             <input id="senha" name="senha" type="password" placeholder="********">
           </div>
 
-          <button class="btn auth-submit" type="submit" data-dev-button>Entrar e continuar</button>
+          <button class="btn auth-submit" type="submit">Entrar e continuar</button>
         </form>
 
         <span class="auth-note" data-auth-helper>Ainda não tem conta? Crie seu cadastro</span>
       </section>
     </main>
 
-    <nav class="nav-arrows" data-nav-arrows aria-label="Navegação entre telas"></nav>
+    <script src="telas2a4.js"></script>
     <script src="navigation.js"></script>
   </body>
 </html>
