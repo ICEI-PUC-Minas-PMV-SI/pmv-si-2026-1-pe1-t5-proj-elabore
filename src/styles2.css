@@ -91,9 +91,9 @@ main.container {
 }
 
 .botao {
-  padding: 0.875rem 1.75rem;
+  padding: 0.875rem 2rem; /* Aumentei um pouco a largura para o novo texto */
   border-radius: 9999px;
-  font-size: 1rem;
+  font-size: 1.1rem; /* Deixei o texto levemente maior para chamar mais atenção */
   font-weight: 500;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -110,15 +110,7 @@ main.container {
 
 .azul:hover {
   background-color: var(--primary-hover);
-}
-
-.cinza {
-  background-color: #dbe7f5;
-  color: #1e3a8a;
-}
-
-.cinza:hover {
-  background-color: #cbd9ea;
+  transform: scale(1.02); /* Dá um leve efeito de zoom ao passar o mouse */
 }
 
 .mockup-container {
