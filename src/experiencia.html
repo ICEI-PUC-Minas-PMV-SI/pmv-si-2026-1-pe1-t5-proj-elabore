@@ -73,12 +73,12 @@
 
             <div class="campo">
                 <label for="campo-cargo">Cargo / Título</label>
-                <input type="text" id="campo-cargo" placeholder="Ex: Designer de Produto Sénior">
+                <input type="text" id="campo-cargo" placeholder="Ex: Analista de Marketing Digital">
             </div>
 
             <div class="campo">
                 <label for="campo-empresa">Empresa</label>
-                <input type="text" id="campo-empresa" placeholder="Ex: Musemind Agency">
+                <input type="text" id="campo-empresa" placeholder="Ex: Agência Horizonte">
             </div>
 
             <div class="campo">
@@ -99,7 +99,7 @@
 
             <div class="campo">
                 <label for="campo-atividades">Atividades Realizadas</label>
-                <textarea id="campo-atividades" placeholder="Desenhei soluções visuais de alta fidelidade.&#10;Criei especificações para o time de desenvolvimento."></textarea>
+                <textarea id="campo-atividades" placeholder="Planejei campanhas digitais para pequenas empresas.&#10;Acompanhei relatórios de desempenho nas redes sociais."></textarea>
                 <p class="dica">Uma atividade por linha.</p>
             </div>
 
@@ -123,35 +123,35 @@
            que o usuário a abre (localStorage vazio).
         ----------------------------------------------- */
         var dadosPadrao = {
-            nome: "Maksud Alam",
-            titulo: "Designer de Produto Sénior",
-            cidade: "Daca, Bangladesh",
-            telefone: "+880 123 456 7890",
-            email: "maksud@musemind.agency",
-            bio: "Sou Designer de Produto Sénior na Musemind, criando experiências significativas para clientes.",
+            nome: "Ana Paula Santos",
+            titulo: "Analista de Marketing Digital",
+            cidade: "Belo Horizonte, MG",
+            telefone: "(31) 99876-5432",
+            email: "ana.santos@email.com",
+            bio: "Trabalho com marketing digital, organizo campanhas e acompanho indicadores para melhorar a comunicação com clientes.",
             experiencias: [
                 {
                     id: 1,
-                    cargo: "Designer de Produto Sénior",
-                    empresa: "Musemind Agency",
-                    local: "Daca, Bangladesh",
+                    cargo: "Analista de Marketing Digital",
+                    empresa: "Agência Horizonte",
+                    local: "Belo Horizonte, MG",
                     inicio: "02/2021",
                     fim: "Presente",
                     atividades: [
-                        "Desenhei soluções visuais de alta fidelidade.",
-                        "Criei especificações de design para o time de desenvolvimento."
+                        "Planejei campanhas digitais para pequenas empresas.",
+                        "Acompanhei relatórios de desempenho nas redes sociais."
                     ]
                 },
                 {
                     id: 2,
-                    cargo: "Designer de Produto",
-                    empresa: "Lunchbox",
-                    local: "Nova York, NY",
+                    cargo: "Assistente de Comunicação",
+                    empresa: "Comercial Minas",
+                    local: "Contagem, MG",
                     inicio: "10/2018",
                     fim: "01/2021",
                     atividades: [
-                        "Desenhei produtos digitais para a indústria hoteleira.",
-                        "Colaborei com desenvolvedores para garantir qualidade do design."
+                        "Apoiei a criação de peças para campanhas internas.",
+                        "Organizei conteúdos para canais digitais da empresa."
                     ]
                 }
             ],
@@ -166,12 +166,25 @@
            Se ainda não houver nada salvo, retorna
            uma cópia dos dadosPadrao.
         ----------------------------------------------- */
+        function aplicarExemploBrasileiro(dados) {
+            if (dados.cidade === "Daca, Bangladesh" || dados.telefone === "+880 123 456 7890" || dados.email === "maksud@musemind.agency") {
+                if (dados.nome === "Maksud Alam") dados.nome = "Ana Paula Santos";
+                if (dados.titulo === "Designer de Produto Senior" || dados.titulo === "Designer de Produto Sénior" || dados.titulo === "Designer de Produto Sênior") dados.titulo = "Analista de Marketing Digital";
+                if (dados.cidade === "Daca, Bangladesh") dados.cidade = "Belo Horizonte, MG";
+                if (dados.telefone === "+880 123 456 7890") dados.telefone = "(31) 99876-5432";
+                if (dados.email === "maksud@musemind.agency") dados.email = "ana.santos@email.com";
+                dados.bio = "Trabalho com marketing digital, organizo campanhas e acompanho indicadores para melhorar a comunicação com clientes.";
+                dados.experiencias = JSON.parse(JSON.stringify(dadosPadrao.experiencias));
+            }
+            return dados;
+        }
+
         function lerDados() {
             var salvo = localStorage.getItem("curriculo");
-            if (salvo) {
-                return JSON.parse(salvo);
-            }
-            return JSON.parse(JSON.stringify(dadosPadrao));
+            var dados = salvo ? JSON.parse(salvo) : JSON.parse(JSON.stringify(dadosPadrao));
+            dados = aplicarExemploBrasileiro(dados);
+            salvarDados(dados);
+            return dados;
         }
 
 

@@ -4,29 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>e-LABORE - Envie Sua Foto</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css2a4.css">
   </head>
   <body class="photo-page">
     <main class="photo-card" aria-labelledby="photo-title">
+      <a class="photo-back" href="login.html" aria-label="Voltar para login">←</a>
       <h1 id="photo-title">Envie Sua Foto</h1>
       <p>Selecione uma foto do seu perfil para sua conta. Uma foto profissional ajuda a se destacar.</p>
 
       <label class="drop-zone" for="foto">
         <span>
+          <span class="photo-preview" data-photo-preview hidden></span>
           <span class="upload-icon" aria-hidden="true">&#8679;</span>
-          <strong>Clique para enviar</strong> ou arraste e solte<br>
-          <span data-photo-name>PNG, JPG ou GIF (max. 300x300px)</span>
+          <span class="photo-instructions">
+            <strong>Clique para enviar</strong> ou arraste e solte
+            <span data-photo-name>PNG, JPG ou GIF (max. 300x300px)</span>
+          </span>
         </span>
         <input id="foto" name="foto" type="file" accept="image/png,image/jpeg,image/gif" data-photo-input>
       </label>
 
       <div class="photo-actions">
-        <button class="btn" type="button" data-dev-button>Enviar</button>
+        <button class="btn" type="button" data-photo-submit>Enviar</button>
         <a class="btn ghost" href="detalhes.html">Não tenho uma foto? Pular esta etapa</a>
       </div>
     </main>
 
-    <nav class="nav-arrows" data-nav-arrows aria-label="Navegação entre telas"></nav>
+    <script src="telas2a4.js"></script>
     <script src="navigation.js"></script>
   </body>
 </html>

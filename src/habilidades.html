@@ -104,37 +104,37 @@
            DADOS PADRÃO
         ----------------------------------------------- */
         var dadosPadrao = {
-            nome: "Maksud Alam",
-            titulo: "Designer de Produto Sénior",
-            cidade: "Daca, Bangladesh",
-            telefone: "+880 123 456 7890",
-            email: "maksud@musemind.agency",
-            bio: "Sou Designer de Produto Sénior na Musemind, criando experiências significativas para clientes.",
+            nome: "Ana Paula Santos",
+            titulo: "Analista de Marketing Digital",
+            cidade: "Belo Horizonte, MG",
+            telefone: "(31) 99876-5432",
+            email: "ana.santos@email.com",
+            bio: "Trabalho com marketing digital, organizo campanhas e acompanho indicadores para melhorar a comunicação com clientes.",
             experiencias: [
                 {
                     id: 1,
-                    cargo: "Designer de Produto Sénior",
-                    empresa: "Musemind Agency",
-                    local: "Daca, Bangladesh",
+                    cargo: "Analista de Marketing Digital",
+                    empresa: "Agência Horizonte",
+                    local: "Belo Horizonte, MG",
                     inicio: "02/2021",
                     fim: "Presente",
-                    atividades: ["Desenhei soluções visuais de alta fidelidade."]
+                    atividades: ["Planejei campanhas digitais para pequenas empresas."]
                 }
             ],
             educacao: [
                 {
                     id: 1,
-                    curso: "BFA Design Industrial",
-                    instituicao: "Instituto Rhode Island",
-                    local: "",
-                    ano: "2013",
-                    destaques: ["Top 3% da classe GPA"]
+                    curso: "Publicidade e Propaganda",
+                    instituicao: "PUC Minas",
+                    local: "Belo Horizonte, MG",
+                    ano: "2021",
+                    destaques: ["Projeto final com foco em campanhas digitais"]
                 }
             ],
             habilidades: {
-                industria: ["Design de Produto", "Interface de Usuário", "Experiência do Usuário", "Saas", "Ui/UX Design", "Prototipação", "Aplicação Mobile", "Agil", "User Flow"],
-                ferramentas: ["Figma", "Sketch", "Protopie", "Framer", "Invision", "Abstract", "Zeplin"],
-                outras: ["HTML", "CSS3", "jQuery"]
+                industria: ["Marketing Digital", "Gestão de Campanhas", "Redes Sociais", "Comunicação", "Atendimento ao Cliente", "Análise de Resultados"],
+                ferramentas: ["Google Analytics", "Meta Ads", "Google Ads", "Canva", "RD Station", "Excel"],
+                outras: ["Organização", "Escrita", "Trabalho em Equipe"]
             }
         };
 
@@ -143,12 +143,27 @@
            lerDados()
            Lê os dados do localStorage.
         ----------------------------------------------- */
+        function aplicarExemploBrasileiro(dados) {
+            if (dados.cidade === "Daca, Bangladesh" || dados.telefone === "+880 123 456 7890" || dados.email === "maksud@musemind.agency") {
+                if (dados.nome === "Maksud Alam") dados.nome = "Ana Paula Santos";
+                if (dados.titulo === "Designer de Produto Senior" || dados.titulo === "Designer de Produto Sénior" || dados.titulo === "Designer de Produto Sênior") dados.titulo = "Analista de Marketing Digital";
+                if (dados.cidade === "Daca, Bangladesh") dados.cidade = "Belo Horizonte, MG";
+                if (dados.telefone === "+880 123 456 7890") dados.telefone = "(31) 99876-5432";
+                if (dados.email === "maksud@musemind.agency") dados.email = "ana.santos@email.com";
+                dados.bio = "Trabalho com marketing digital, organizo campanhas e acompanho indicadores para melhorar a comunicação com clientes.";
+                dados.experiencias = JSON.parse(JSON.stringify(dadosPadrao.experiencias));
+                dados.educacao = JSON.parse(JSON.stringify(dadosPadrao.educacao));
+                dados.habilidades = JSON.parse(JSON.stringify(dadosPadrao.habilidades));
+            }
+            return dados;
+        }
+
         function lerDados() {
             var salvo = localStorage.getItem("curriculo");
-            if (salvo) {
-                return JSON.parse(salvo);
-            }
-            return JSON.parse(JSON.stringify(dadosPadrao));
+            var dados = salvo ? JSON.parse(salvo) : JSON.parse(JSON.stringify(dadosPadrao));
+            dados = aplicarExemploBrasileiro(dados);
+            salvarDados(dados);
+            return dados;
         }
 
 
