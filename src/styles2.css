@@ -91,9 +91,9 @@ main.container {
 }
 
 .botao {
-  padding: 0.875rem 2rem; /* Aumentei um pouco a largura para o novo texto */
+  padding: 0.875rem 2rem;
   border-radius: 9999px;
-  font-size: 1.1rem; /* Deixei o texto levemente maior para chamar mais atenção */
+  font-size: 1.1rem;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -110,69 +110,82 @@ main.container {
 
 .azul:hover {
   background-color: var(--primary-hover);
-  transform: scale(1.02); /* Dá um leve efeito de zoom ao passar o mouse */
+  transform: scale(1.02);
 }
 
+/* ==========================================
+   📸 CONTAINER DO MOCKUP (PROCESSO PASSO A PASSO)
+   ========================================== */
 .mockup-container {
   position: relative;
-  max-width: 1000px;
-  height: 480px;
-  margin: 0 auto;
+  max-width: 1100px;  
+  min-height: 480px;      
+  margin: 2rem auto;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
+/* Estilo Base dos Cards - Totalmente Sólido e Otimizado */
 .resume-card {
-  background: white;
+  background: #ffffff !important;
+  opacity: 1 !important;
   border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-  position: absolute;
-  width: 450px;
-  height: 380px;
-  padding: 2rem;
-  border: 1px solid #f1f5f9;
-  overflow: hidden;
+  width: 460px; /* Ajustado ligeiramente o tamanho para caberem os dois lado a lado depois */
+  min-height: 380px;     
+  padding: 1.8rem;
+  
+  /* Borda escura e nítida idêntica à do tom principal */
+  border: 2px solid #0f172a !important; 
+  
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
   text-align: left;
+  position: absolute; /* Mudado para absolute para permitir o empilhamento correto */
+  transition: all 0.3s ease;
 }
 
+/* PASSO 1: Jogando o Card do Rodrigo totalmente para a ESQUERDA */
 .card-left {
-  transform: translateX(-40%) translateY(30px) scale(0.9);
-  z-index: 1;
-  opacity: 0.5;
+  transform: translateX(-55%) translateY(20px);
+  z-index: 5;
 }
 
+/* PASSO 2: Jogando o Card do Alexandre totalmente para a DIREITA */
 .card-right {
-  transform: translateX(40%) translateY(30px) scale(0.9);
-  z-index: 1;
-  opacity: 0.5;
+  transform: translateX(55%) translateY(20px);
+  z-index: 5;
 }
 
+/* PASSO 3: Card central da Mariana posicionado exatamente no meio e à frente de tudo */
 .card-center {
-  z-index: 10;
-  top: -10px;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+  transform: translateX(0) translateY(20px); /* Fica parado no centro */
+  z-index: 10; /* Número maior faz ele ficar fisicamente por CIMA dos outros cards */
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15); /* Sombra mais forte para parecer flutuante */
+  border: 2px solid #0f172a !important; /* Mesma borda marcante e escura */
 }
 
+/* Elementos Internos do Card */
 .faux-header {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .avatar {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background-color: #cbd5e1;
   background-size: cover;
+  background-position: center;
+  border: 1px solid #0f172a;
 }
 
 .faux-name {
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--text-dark);
 }
 
@@ -181,96 +194,111 @@ main.container {
   color: #64748b;
 }
 
-.faux-line {
-  height: 8px;
-  background: #f1f5f9;
-  border-radius: 4px;
-  margin-bottom: 12px;
-}
-.faux-line.w-full { width: 100%; }
-.faux-line.w-3-4 { width: 75%; }
-
-.floating-badge {
-  position: absolute;
-  background: white;
-  padding: 0.6rem 1.1rem;
-  border-radius: 9999px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+/* Classes de formatação criadas para organizar o conteúdo de forma legível */
+.titulo-secao-card {
+  margin: 14px 0 6px 0;
   font-size: 0.85rem;
-  font-weight: 500;
-  z-index: 20;
-  border: 1px solid #f1f5f9;
-  color: #0f172a;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
 }
 
-.badge-icon {
-  background: #22c55e;
-  color: white;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
+.texto-conteudo-card {
+  font-size: 0.78rem;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+/* ==========================================
+   ✨ SECÇÃO DO CARROSSEL DINÂMICO
+   ========================================== */
+.secao-carrossel {
+  max-width: 600px;
+  margin: 5rem auto 6rem;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.secao-carrossel h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+}
+
+.carrossel-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 10px;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.badge-left { left: 8%; top: 55%; }
-.badge-right-top { right: 10%; top: 12%; }
-.badge-right-bottom { right: 16%; bottom: 32%; }
-
-.score-gauge {
-  position: absolute;
-  left: 18%;
-  top: 22%;
-  z-index: 30;
+.depoimento-card {
   background: white;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e2e8f0;
+  min-height: 200px;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: conic-gradient(
-    #f59e0b 0% 120deg, 
-    #22c55e 120deg 250deg, 
-    #e2e8f0 250deg 360deg
-  );
+  transition: all 0.3s ease;
 }
 
-.score-gauge::before {
-  content: '';
-  position: absolute;
-  width: 118px;
-  height: 118px;
-  background: white;
-  border-radius: 50%;
+.estrelas {
+  color: #f59e0b;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
 }
 
-.score-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
+.texto-depoimento {
+  color: var(--text-gray);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 1.5rem;
 }
 
-.score-number {
-  font-size: 2.2rem;
-  font-weight: 700;
+.nome-usuario {
   color: var(--text-dark);
-  line-height: 1;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
-.score-label {
-  font-size: 0.8rem;
-  color: #64748b;
-  margin-top: 4px;
-  font-weight: 500;
+.seta-carrossel {
+  background: white;
+  border: 1px solid #e2e8f0;
+  color: var(--text-gray);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
+
+.seta-carrossel:hover {
+  background: var(--primary-blue);
+  color: white;
+  border-color: var(--primary-blue);
+  transform: scale(1.05);
+}
+
+.seta-carrossel:active {
+  transform: scale(0.95);
+}
+
+/* ========================================== */
 
 .nav-arrows {
   position: fixed;
@@ -299,24 +327,4 @@ main.container {
 .arrow-link.disabled {
   opacity: 0.45;
   pointer-events: none;
-}
-
-@media (max-width: 768px) {
-  .mockup-container { height: 320px; }
-  .card-left, .card-right, .floating-badge { display: none; }
-  .card-center { width: 95%; position: relative; margin: 0 auto; }
-  .score-gauge {
-    left: 50%;
-    transform: translateX(-50%);
-    top: 65%;
-    width: 120px;
-    height: 120px;
-  }
-  .score-gauge::before { width: 94px; height: 94px; }
-  .score-number { font-size: 1.8rem; }
-
-  .nav-arrows {
-    right: 14px;
-    bottom: 14px;
-  }
 }
