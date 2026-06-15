@@ -28,8 +28,8 @@ O sistema será desenvolvido como uma aplicação web estática em **HTML, CSS e
 | RF-006 | A aplicação deve permitir cadastro, edição e remoção de experiências profissionais. | Arthur André Mariano Souza| `experiencia.html` |
 | RF-007 | A aplicação deve permitir cadastro, edição e remoção de formações acadêmicas ou cursos. | Arthur André Mariano Souza| `educacao.html` |
 | RF-008 | A aplicação deve permitir cadastro de habilidades e competências. | Arthur André Mariano Souza| `habilidades.html` |
-| RF-009 | A aplicação deve exibir pré-visualização do currículo durante o preenchimento. | Darwin Luan Ferreira Gonzaga Tonelli | componente de preview |
-| RF-010 | A aplicação deve permitir geração e download do currículo em PDF. | Darwin Luan Ferreira Gonzaga Tonelli | `preview.html` / script de PDF |
+| RF-009 | A aplicação deve exibir pré-visualização do currículo durante o preenchimento. | João Vitor | componente de preview |
+| RF-010 | A aplicação deve permitir geração e download do currículo em PDF. | João Vitor | `preview.html` / script de PDF |
 
 ### Requisitos Não Funcionais
 
