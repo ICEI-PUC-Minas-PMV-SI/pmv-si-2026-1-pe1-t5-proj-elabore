@@ -8,6 +8,7 @@
     "experiencia.html",
     "educacao.html",
     "habilidades.html",
+    "preview.html",
   ];
 
   const curriculoPadrao = {
@@ -517,7 +518,7 @@
 
       salvarMiniBioAtual();
       liberarEtapa("experiencia.html");
-      window.location.href = "experiencia.html";
+      window.location.href = "experiencias.html";
     });
   }
 

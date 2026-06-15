@@ -1,18 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>e-LABORE - Pré-visualização</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body class="placeholder-page">
-    <main>
-      <h1>Pré-visualização do Currículo</h1>
-      <p>Em desenvolvimento!!</p>
-    </main>
+    <title>Pré-visualização Final — CV Builder</title>
+    <link rel="stylesheet" href="styles3.css">
+    <link rel="stylesheet" href="preview.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
 
-    <nav class="nav-arrows" data-nav-arrows aria-label="Navegação entre telas"></nav>
-    <script src="navigation.js"></script>
-  </body>
+    <nav class="top-nav">
+        <a href="detalhes.html" class="tab">Seus Detalhes</a>
+        <a href="minibio.html" class="tab">Mini-Bio</a>
+        <a href="experiencias.html" class="tab">Experiências</a>
+        <a href="educacao.html" class="tab">Educação</a>
+        <a href="habilidades.html" class="tab">Habilidades</a>
+        <a href="preview.html" class="tab ativo">Prévia & PDF</a>
+    </nav>
+
+    <div class="main-preview-container">
+        
+        <div class="pdf-actions-panel">
+            <h1 class="titulo">Seu Currículo está Pronto!</h1>
+            <p class="subtitulo">Confira abaixo a disposição final das informações e faça o download em PDF de alta qualidade.</p>
+            
+            <button id="btn-pdf" class="btn-avancar" style="background-color: #3b82f6; border: none; min-width: 280px; font-size: 1.1rem; padding: 0.85rem 2rem; border-radius: 6px; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">
+                📥 Baixar Currículo em PDF
+            </button>
+        </div>
+
+        <div id="curriculo-conteudo" class="curriculo-a4">
+            <div class="cv" id="preview-cv">
+                </div>
+        </div>
+
+    </div>
+
+    <div class="bottom-nav">
+        <button class="btn-voltar" onclick="location.href='habilidades.html'">Voltar para Habilidades</button>
+        <button class="btn-voltar" style="background: #10b981; color: white; border: none;" onclick="location.href='index.html'">Voltar ao Início</button>
+    </div>
+
+    <script src="preview.js"></script>
+
+</body>
 </html>
