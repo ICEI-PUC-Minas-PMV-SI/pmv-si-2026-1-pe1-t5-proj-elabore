@@ -4,7 +4,7 @@ const pages = [
   "foto.html",
   "detalhes.html",
   "minibio.html",
-  "experiencia.html",
+  "experiencias.html",
   "educacao.html",
   "habilidades.html",
   "preview.html",

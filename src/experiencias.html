@@ -1,61 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiência — CV Builder</title>
-    <link rel="stylesheet" href="styles3.css">
-</head>
-<body>
-
-    <!-- ================================================
-         NAVEGAÇÃO SUPERIOR
-         A classe "ativo" marca a página atual.
-    ================================================ -->
-    <nav class="top-nav">
-        <a href="detalhes.html" class="tab">Seus Detalhes</a>
-        <a href="minibio.html" class="tab">Mini-Bio</a>
-        <a href="experiencias.html" class="tab ativo">Experiências</a>
-        <a href="educacao.html" class="tab">Educação</a>
-        <a href="habilidades.html" class="tab">Habilidades</a>
-        <a href="preview.html" class="tab">Prévia & PDF</a>
+    <title>e-LABORE - Experiências</title>
+    <link rel="stylesheet" href="css2a4.css">
+    <link rel="stylesheet" href="builder.css">
+  </head>
+  <body class="builder-page">
+    <nav class="stepbar" aria-label="Etapas do currículo">
+      <a href="detalhes.html">Seus Detalhes</a>
+      <a href="minibio.html">Mini-Bio</a>
+      <a href="experiencias.html">Experiências</a>
+      <a href="educacao.html">Educação</a>
+      <a href="habilidades.html">Habilidades</a>
+      <a href="preview.html">Prévia & PDF</a>
     </nav>
 
-    <!-- ================================================
-         CONTEÚDO PRINCIPAL
-         Mobile: formulário em cima, preview embaixo.
-         Desktop: formulário à esquerda, preview à direita.
-    ================================================ -->
-    <div class="main">
+    <main class="builder-layout">
+      <section class="details-panel" aria-labelledby="exp-title">
+        <h1 id="exp-title">Experiência</h1>
+        <p class="subtitle">Revise sua experiência profissional.</p>
 
-        <!-- Painel do formulário -->
-        <div class="painel-form">
-            <h1 class="titulo">Experiência</h1>
-            <p class="subtitulo">Revise sua experiência profissional.</p>
+        <!-- Os cards são inseridos aqui pelo JavaScript -->
+        <div id="lista-experiencias"></div>
 
-            <!-- Os cards são inseridos aqui pelo JavaScript -->
-            <div id="lista-experiencias"></div>
+        <button class="btn-add" onclick="abrirModal()">
+          <span class="circulo-mais">+</span>
+          Adicionar Experiência
+        </button>
 
-            <button class="btn-add" onclick="abrirModal()">
-                <span class="circulo-mais">+</span>
-                Adicionar Experiência
-            </button>
+        <div class="details-actions">
+          <a class="btn secondary" href="minibio.html">Voltar</a>
+          <a class="btn" href="educacao.html">Salvar &amp; Avançar</a>
         </div>
+      </section>
 
-        <!-- Painel de pré-visualização do currículo -->
-        <div class="painel-preview">
-            <div class="cv" id="preview-cv"></div>
-        </div>
-
-    </div>
-
-    <!-- ================================================
-         NAVEGAÇÃO INFERIOR
-    ================================================ -->
-    <div class="bottom-nav">
-        <button class="btn-voltar" onclick="location.href='minibio.html'">Voltar</button>
-        <button class="btn-avancar" onclick="location.href='educacao.html'">Salvar &amp; Avançar</button>
-    </div>
+      <aside class="preview-panel" aria-label="Prévia do currículo">
+        <div class="cv" id="preview-cv"></div>
+      </aside>
+    </main>
 
     <!-- ================================================
          MODAL — ADICIONAR / EDITAR EXPERIÊNCIA
@@ -63,53 +47,52 @@
          para exibi-lo quando necessário.
     ================================================ -->
     <div class="modal-fundo" id="modal-fundo" onclick="fecharAoClicarFora(event)">
-        <div class="modal">
+      <div class="modal">
 
-            <h2 class="modal-titulo" id="modal-titulo">Adicionar Experiência</h2>
+        <h2 class="modal-titulo" id="modal-titulo">Adicionar Experiência</h2>
 
-            <div class="campo">
-                <label for="campo-cargo">Cargo / Título</label>
-                <input type="text" id="campo-cargo" placeholder="Ex: Designer de Produto Sénior">
-            </div>
-
-            <div class="campo">
-                <label for="campo-empresa">Empresa</label>
-                <input type="text" id="campo-empresa" placeholder="Ex: Musemind Agency">
-            </div>
-
-            <div class="campo">
-                <label for="campo-local">Localização</label>
-                <input type="text" id="campo-local" placeholder="Ex: São Paulo, SP">
-            </div>
-
-            <div class="linha-dupla">
-                <div class="campo">
-                    <label for="campo-inicio">Início</label>
-                    <input type="text" id="campo-inicio" placeholder="MM/AAAA">
-                </div>
-                <div class="campo">
-                    <label for="campo-fim">Término</label>
-                    <input type="text" id="campo-fim" placeholder="MM/AAAA ou Presente">
-                </div>
-            </div>
-
-            <div class="campo">
-                <label for="campo-atividades">Atividades Realizadas</label>
-                <textarea id="campo-atividades" placeholder="Desenhei soluções visuais de alta fidelidade.&#10;Criei especificações para o time de desenvolvimento."></textarea>
-                <p class="dica">Uma atividade por linha.</p>
-            </div>
-
-            <div class="modal-acoes">
-                <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
-                <button class="btn-salvar" onclick="salvarExperiencia()">Salvar</button>
-            </div>
-
+        <div class="campo">
+          <label for="campo-cargo">Cargo / Título</label>
+          <input type="text" id="campo-cargo" placeholder="Ex: Designer de Produto Sénior">
         </div>
+
+        <div class="campo">
+          <label for="campo-empresa">Empresa</label>
+          <input type="text" id="campo-empresa" placeholder="Ex: Musemind Agency">
+        </div>
+
+        <div class="campo">
+          <label for="campo-local">Localização</label>
+          <input type="text" id="campo-local" placeholder="Ex: São Paulo, SP">
+        </div>
+
+        <div class="linha-dupla">
+          <div class="campo">
+            <label for="campo-inicio">Início</label>
+            <input type="text" id="campo-inicio" placeholder="MM/AAAA">
+          </div>
+          <div class="campo">
+            <label for="campo-fim">Término</label>
+            <input type="text" id="campo-fim" placeholder="MM/AAAA ou Presente">
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="campo-atividades">Atividades Realizadas</label>
+          <textarea id="campo-atividades" placeholder="Desenhei soluções visuais de alta fidelidade.&#10;Criei especificações para o time de desenvolvimento."></textarea>
+          <p class="dica">Uma atividade por linha.</p>
+        </div>
+
+        <div class="modal-acoes">
+          <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+          <button class="btn-salvar" onclick="salvarExperiencia()">Salvar</button>
+        </div>
+
+      </div>
     </div>
 
-    <!-- JavaScript externo desta página -->
+    <!-- JavaScript da tela (lógica do grupo) + navegação padronizada -->
     <script src="experiencias.js"></script>
-
-</body>
+    <script src="telas2a4.js"></script>
+  </body>
 </html>
-

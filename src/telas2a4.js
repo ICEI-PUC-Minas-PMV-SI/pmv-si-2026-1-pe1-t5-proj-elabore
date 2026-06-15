@@ -5,7 +5,7 @@
   const ETAPAS = [
     "detalhes.html",
     "minibio.html",
-    "experiencia.html",
+    "experiencias.html",
     "educacao.html",
     "habilidades.html",
     "preview.html",
@@ -517,7 +517,7 @@
       }
 
       salvarMiniBioAtual();
-      liberarEtapa("experiencia.html");
+      liberarEtapa("experiencias.html");
       window.location.href = "experiencias.html";
     });
   }

@@ -1,100 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habilidades — CV Builder</title>
-    <link rel="stylesheet" href="styles3.css">
-</head>
-<body>
-
-    <!-- ================================================
-         NAVEGAÇÃO SUPERIOR
-    ================================================ -->
-    <nav class="top-nav">
-        <a href="detalhes.html" class="tab">Seus Detalhes</a>
-        <a href="minibio.html" class="tab">Mini-Bio</a>
-        <a href="experiencias.html" class="tab">Experiências</a>
-        <a href="educacao.html" class="tab">Educação</a>
-        <a href="habilidades.html" class="tab ativo">Habilidades</a>
-        <a href="preview.html" class="tab">Prévia & PDF</a>
+    <title>e-LABORE - Habilidades</title>
+    <link rel="stylesheet" href="css2a4.css">
+    <link rel="stylesheet" href="builder.css">
+  </head>
+  <body class="builder-page">
+    <nav class="stepbar" aria-label="Etapas do currículo">
+      <a href="detalhes.html">Seus Detalhes</a>
+      <a href="minibio.html">Mini-Bio</a>
+      <a href="experiencias.html">Experiências</a>
+      <a href="educacao.html">Educação</a>
+      <a href="habilidades.html">Habilidades</a>
+      <a href="preview.html">Prévia & PDF</a>
     </nav>
 
-    <!-- ================================================
-         CONTEÚDO PRINCIPAL
-    ================================================ -->
-    <div class="main">
+    <main class="builder-layout">
+      <section class="details-panel" aria-labelledby="hab-title">
+        <h1 id="hab-title">Habilidades</h1>
+        <p class="subtitle">Destaque seis a oito de suas principais habilidades.</p>
 
-        <!-- Painel do formulário -->
-        <div class="painel-form">
-            <h1 class="titulo">Habilidades</h1>
-            <p class="subtitulo">Destaque seis a oito de suas principais habilidades.</p>
+        <!-- Categoria 1: Conhecimentos de Indústria -->
+        <div class="card-categoria">
+          <div class="categoria-titulo">Conhecimentos de Indústria:</div>
 
-            <!-- Categoria 1: Conhecimentos de Indústria -->
-            <div class="card-categoria">
-                <div class="categoria-titulo">Conhecimentos de Indústria:</div>
-
-                <!--
-                    .tags-area é o container das tags.
-                    O onclick foca o input ao final para que o usuário
-                    possa digitar clicando em qualquer parte da área.
-                -->
-                <div class="tags-area" id="area-industria" onclick="focarInput('input-industria')">
-                    <!-- Tags inseridas pelo JS -->
-                    <input
-                        type="text"
-                        class="tag-input"
-                        id="input-industria"
-                        placeholder="Digite e pressione Enter..."
-                        onkeydown="aoApertarTecla(event, 'industria')">
-                </div>
-            </div>
-
-            <!-- Categoria 2: Ferramentas & Tecnologias -->
-            <div class="card-categoria">
-                <div class="categoria-titulo">Ferramentas &amp; Tecnologias:</div>
-                <div class="tags-area" id="area-ferramentas" onclick="focarInput('input-ferramentas')">
-                    <input
-                        type="text"
-                        class="tag-input"
-                        id="input-ferramentas"
-                        placeholder="Digite e pressione Enter..."
-                        onkeydown="aoApertarTecla(event, 'ferramentas')">
-                </div>
-            </div>
-
-            <!-- Categoria 3: Outras Skills -->
-            <div class="card-categoria">
-                <div class="categoria-titulo">Outras Skills:</div>
-                <div class="tags-area" id="area-outras" onclick="focarInput('input-outras')">
-                    <input
-                        type="text"
-                        class="tag-input"
-                        id="input-outras"
-                        placeholder="Digite e pressione Enter..."
-                        onkeydown="aoApertarTecla(event, 'outras')">
-                </div>
-            </div>
-
+          <!--
+              .tags-area é o container das tags.
+              O onclick foca o input ao final para que o usuário
+              possa digitar clicando em qualquer parte da área.
+          -->
+          <div class="tags-area" id="area-industria" onclick="focarInput('input-industria')">
+            <!-- Tags inseridas pelo JS -->
+            <input
+              type="text"
+              class="tag-input"
+              id="input-industria"
+              placeholder="Digite e pressione Enter..."
+              onkeydown="aoApertarTecla(event, 'industria')">
+          </div>
         </div>
 
-        <!-- Painel de pré-visualização do currículo -->
-        <div class="painel-preview">
-            <div class="cv" id="preview-cv"></div>
+        <!-- Categoria 2: Ferramentas & Tecnologias -->
+        <div class="card-categoria">
+          <div class="categoria-titulo">Ferramentas &amp; Tecnologias:</div>
+          <div class="tags-area" id="area-ferramentas" onclick="focarInput('input-ferramentas')">
+            <input
+              type="text"
+              class="tag-input"
+              id="input-ferramentas"
+              placeholder="Digite e pressione Enter..."
+              onkeydown="aoApertarTecla(event, 'ferramentas')">
+          </div>
         </div>
 
-    </div>
+        <!-- Categoria 3: Outras Skills -->
+        <div class="card-categoria">
+          <div class="categoria-titulo">Outras Skills:</div>
+          <div class="tags-area" id="area-outras" onclick="focarInput('input-outras')">
+            <input
+              type="text"
+              class="tag-input"
+              id="input-outras"
+              placeholder="Digite e pressione Enter..."
+              onkeydown="aoApertarTecla(event, 'outras')">
+          </div>
+        </div>
 
-    <!-- ================================================
-         NAVEGAÇÃO INFERIOR
-    ================================================ -->
-    <div class="bottom-nav">
-        <button class="btn-voltar" onclick="location.href='educacao.html'">Voltar</button>
-        <button class="btn-avancar" onclick="location.href='preview.html'">Salvar &amp; Avançar</button>
-    </div>
+        <div class="details-actions">
+          <a class="btn secondary" href="educacao.html">Voltar</a>
+          <a class="btn" href="preview.html">Salvar &amp; Avançar</a>
+        </div>
+      </section>
 
-    <!-- JavaScript externo desta página -->
+      <aside class="preview-panel" aria-label="Prévia do currículo">
+        <div class="cv" id="preview-cv"></div>
+      </aside>
+    </main>
+
+    <!-- JavaScript da tela (lógica do grupo) + navegação padronizada -->
     <script src="habilidades.js"></script>
-
-</body>
+    <script src="telas2a4.js"></script>
+  </body>
 </html>

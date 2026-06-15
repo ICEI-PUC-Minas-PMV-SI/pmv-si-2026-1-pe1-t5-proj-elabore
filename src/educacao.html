@@ -1,105 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educação — CV Builder</title>
-    <link rel="stylesheet" href="styles3.css">
-</head>
-<body>
-
-    <!-- ================================================
-         NAVEGAÇÃO SUPERIOR
-    ================================================ -->
-    <nav class="top-nav">
-        <a href="detalhes.html" class="tab">Seus Detalhes</a>
-        <a href="minibio.html" class="tab">Mini-Bio</a>
-        <a href="experiencias.html" class="tab">Experiências</a>
-        <a href="educacao.html" class="tab ativo">Educação</a>
-        <a href="habilidades.html" class="tab">Habilidades</a>
-        <a href="preview.html" class="tab">Prévia & PDF</a>
+    <title>e-LABORE - Educação</title>
+    <link rel="stylesheet" href="css2a4.css">
+    <link rel="stylesheet" href="builder.css">
+  </head>
+  <body class="builder-page">
+    <nav class="stepbar" aria-label="Etapas do currículo">
+      <a href="detalhes.html">Seus Detalhes</a>
+      <a href="minibio.html">Mini-Bio</a>
+      <a href="experiencias.html">Experiências</a>
+      <a href="educacao.html">Educação</a>
+      <a href="habilidades.html">Habilidades</a>
+      <a href="preview.html">Prévia & PDF</a>
     </nav>
 
-    <!-- ================================================
-         CONTEÚDO PRINCIPAL
-    ================================================ -->
-    <div class="main">
+    <main class="builder-layout">
+      <section class="details-panel" aria-labelledby="edu-title">
+        <h1 id="edu-title">Educação</h1>
+        <p class="subtitle">Revise seu histórico educacional.</p>
 
-        <!-- Painel do formulário -->
-        <div class="painel-form">
-            <h1 class="titulo">Educação</h1>
-            <p class="subtitulo">Revise seu histórico educacional.</p>
+        <!-- Os cards são inseridos aqui pelo JavaScript -->
+        <div id="lista-educacao"></div>
 
-            <!-- Os cards são inseridos aqui pelo JavaScript -->
-            <div id="lista-educacao"></div>
+        <button class="btn-add" onclick="abrirModal()">
+          <span class="circulo-mais">+</span>
+          Adicionar Educação
+        </button>
 
-            <button class="btn-add" onclick="abrirModal()">
-                <span class="circulo-mais">+</span>
-                Adicionar Educação
-            </button>
+        <div class="details-actions">
+          <a class="btn secondary" href="experiencias.html">Voltar</a>
+          <a class="btn" href="habilidades.html">Salvar &amp; Avançar</a>
         </div>
+      </section>
 
-        <!-- Painel de pré-visualização do currículo -->
-        <div class="painel-preview">
-            <div class="cv" id="preview-cv"></div>
-        </div>
-
-    </div>
-
-    <!-- ================================================
-         NAVEGAÇÃO INFERIOR
-    ================================================ -->
-    <div class="bottom-nav">
-        <button class="btn-voltar" onclick="location.href='experiencia.html'">Voltar</button>
-        <button class="btn-avancar" onclick="location.href='habilidades.html'">Salvar &amp; Avançar</button>
-    </div>
+      <aside class="preview-panel" aria-label="Prévia do currículo">
+        <div class="cv" id="preview-cv"></div>
+      </aside>
+    </main>
 
     <!-- ================================================
          MODAL — ADICIONAR / EDITAR FORMAÇÃO
     ================================================ -->
     <div class="modal-fundo" id="modal-fundo" onclick="fecharAoClicarFora(event)">
-        <div class="modal">
+      <div class="modal">
 
-            <h2 class="modal-titulo" id="modal-titulo">Adicionar Educação</h2>
+        <h2 class="modal-titulo" id="modal-titulo">Adicionar Educação</h2>
 
-            <div class="campo">
-                <label for="campo-curso">Curso / Formação</label>
-                <input type="text" id="campo-curso" placeholder="Ex: BFA Design Industrial">
-            </div>
-
-            <div class="campo">
-                <label for="campo-instituicao">Instituição</label>
-                <input type="text" id="campo-instituicao" placeholder="Ex: Instituto Rhode Island">
-            </div>
-
-            <div class="linha-dupla">
-                <div class="campo">
-                    <label for="campo-local">Localização</label>
-                    <input type="text" id="campo-local" placeholder="Ex: Providence, RI">
-                </div>
-                <div class="campo">
-                    <label for="campo-ano">Ano de Conclusão</label>
-                    <input type="text" id="campo-ano" placeholder="Ex: 2013">
-                </div>
-            </div>
-
-            <div class="campo">
-                <label for="campo-destaques">Destaques</label>
-                <textarea id="campo-destaques" placeholder="Top 3% da classe GPA&#10;Bolsista integral..."></textarea>
-                <p class="dica">Um destaque por linha.</p>
-            </div>
-
-            <div class="modal-acoes">
-                <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
-                <button class="btn-salvar" onclick="salvarFormacao()">Salvar</button>
-            </div>
-
+        <div class="campo">
+          <label for="campo-curso">Curso / Formação</label>
+          <input type="text" id="campo-curso" placeholder="Ex: BFA Design Industrial">
         </div>
+
+        <div class="campo">
+          <label for="campo-instituicao">Instituição</label>
+          <input type="text" id="campo-instituicao" placeholder="Ex: Instituto Rhode Island">
+        </div>
+
+        <div class="linha-dupla">
+          <div class="campo">
+            <label for="campo-local">Localização</label>
+            <input type="text" id="campo-local" placeholder="Ex: Providence, RI">
+          </div>
+          <div class="campo">
+            <label for="campo-ano">Ano de Conclusão</label>
+            <input type="text" id="campo-ano" placeholder="Ex: 2013">
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="campo-destaques">Destaques</label>
+          <textarea id="campo-destaques" placeholder="Top 3% da classe GPA&#10;Bolsista integral..."></textarea>
+          <p class="dica">Um destaque por linha.</p>
+        </div>
+
+        <div class="modal-acoes">
+          <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+          <button class="btn-salvar" onclick="salvarFormacao()">Salvar</button>
+        </div>
+
+      </div>
     </div>
 
-    <!-- JavaScript externo desta página -->
+    <!-- JavaScript da tela (lógica do grupo) + navegação padronizada -->
     <script src="educacao.js"></script>
-
-</body>
+    <script src="telas2a4.js"></script>
+  </body>
 </html>
-

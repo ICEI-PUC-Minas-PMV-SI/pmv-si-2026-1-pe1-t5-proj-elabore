@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pré-visualização Final — CV Builder</title>
-    <link rel="stylesheet" href="styles3.css">
-    <link rel="stylesheet" href="preview.css">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-</head>
-<body>
+    <title>e-LABORE - Prévia & PDF</title>
+    <link rel="stylesheet" href="css2a4.css">
+    <link rel="stylesheet" href="builder.css">
 
-    <nav class="top-nav">
-        <a href="detalhes.html" class="tab">Seus Detalhes</a>
-        <a href="minibio.html" class="tab">Mini-Bio</a>
-        <a href="experiencias.html" class="tab">Experiências</a>
-        <a href="educacao.html" class="tab">Educação</a>
-        <a href="habilidades.html" class="tab">Habilidades</a>
-        <a href="preview.html" class="tab ativo">Prévia & PDF</a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
+  <body class="builder-page">
+    <nav class="stepbar" aria-label="Etapas do currículo">
+      <a href="detalhes.html">Seus Detalhes</a>
+      <a href="minibio.html">Mini-Bio</a>
+      <a href="experiencias.html">Experiências</a>
+      <a href="educacao.html">Educação</a>
+      <a href="habilidades.html">Habilidades</a>
+      <a href="preview.html">Prévia & PDF</a>
     </nav>
 
-    <div class="main-preview-container">
-        
-        <div class="pdf-actions-panel">
-            <h1 class="titulo">Seu Currículo está Pronto!</h1>
-            <p class="subtitulo">Confira abaixo a disposição final das informações e faça o download em PDF de alta qualidade.</p>
-            
-            <button id="btn-pdf" class="btn-avancar" style="background-color: #3b82f6; border: none; min-width: 280px; font-size: 1.1rem; padding: 0.85rem 2rem; border-radius: 6px; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);">
-                📥 Baixar Currículo em PDF
-            </button>
-        </div>
+    <main class="preview-stage">
+      <div class="pdf-actions-panel">
+        <h1>Seu currículo está pronto!</h1>
+        <p class="subtitle">Confira abaixo a disposição final das informações e faça o download em PDF de alta qualidade.</p>
 
-        <div id="curriculo-conteudo" class="curriculo-a4">
-            <div class="cv" id="preview-cv">
-                </div>
-        </div>
+        <button id="btn-pdf" class="btn" type="button">📥 Baixar Currículo em PDF</button>
+      </div>
 
-    </div>
+      <div id="curriculo-conteudo" class="curriculo-a4">
+        <div class="cv" id="preview-cv"></div>
+      </div>
 
-    <div class="bottom-nav">
-        <button class="btn-voltar" onclick="location.href='habilidades.html'">Voltar para Habilidades</button>
-        <button class="btn-voltar" style="background: #10b981; color: white; border: none;" onclick="location.href='index.html'">Voltar ao Início</button>
-    </div>
+      <div class="details-actions">
+        <a class="btn secondary" href="habilidades.html">Voltar para Habilidades</a>
+        <a class="btn" href="index.html">Voltar ao Início</a>
+      </div>
+    </main>
 
+    <!-- JavaScript da tela (lógica do grupo) + navegação padronizada -->
     <script src="preview.js"></script>
-
-</body>
+    <script src="telas2a4.js"></script>
+  </body>
 </html>

@@ -22,7 +22,7 @@ O e-LABORE será implementado como um projeto estático em HTML, CSS e JavaScrip
 - `foto.html`
 - `detalhes.html`
 - `minibio.html`
-- `experiencia.html`
+- `experiencias.html`
 - `educacao.html`
 - `habilidades.html`
 - `preview.html`
