@@ -120,6 +120,7 @@ function renderizarLista() {
 function renderizarPreview() {
     var dados = lerDados();
     var preview = document.getElementById("preview-cv");
+    var fotoSrc = escaparHtml(dados.foto || "https://i.pravatar.cc/80?img=11");
 
     /* Monta as experiências (resumidas) */
     var expHtml = "";
@@ -136,23 +137,23 @@ function renderizarPreview() {
     dados.educacao.forEach(function(edu) {
         var dHtml = "";
         if (edu.destaques.length > 0) {
-            dHtml = "<li style='font-size:5.5px;color:#444;'>" + escaparHtml(edu.destaques[0]) + "</li>";
+            dHtml = "<li>" + escaparHtml(edu.destaques[0]) + "</li>";
         }
         eduHtml +=
             '<div class="cv-item">'
           + '<div class="cv-item-titulo">' + escaparHtml(edu.curso) + (edu.ano ? " &mdash; " + escaparHtml(edu.ano) : "") + '</div>'
           + '<div class="cv-item-meta">' + escaparHtml(edu.instituicao || "") + '</div>'
-          + '<ul style="list-style:disc;padding-left:7px;">' + dHtml + '</ul>'
+          + '<ul>' + dHtml + '</ul>'
           + '</div>';
     });
 
     if (eduHtml === "") {
-        eduHtml = '<span style="font-size:6px;color:#ccc;">Nenhuma formação cadastrada.</span>';
+        eduHtml = '<span class="cv-empty">Nenhuma formação cadastrada.</span>';
     }
 
     preview.innerHTML =
         '<div class="cv-header">'
-      + '<img class="cv-foto" src="https://i.pravatar.cc/80?img=11" alt="Foto">'
+      + '<img class="cv-foto" src="' + fotoSrc + '" alt="Foto">'
       + '<div>'
       + '<div class="cv-nome">' + escaparHtml(dados.nome || "Seu Nome") + '</div>'
       + '<div class="cv-cargo-txt">' + escaparHtml(dados.titulo || "Seu Cargo") + '</div>'

@@ -123,6 +123,7 @@ function renderizarLista() {
 function renderizarPreview() {
     var dados = lerDados();
     var preview = document.getElementById("preview-cv");
+    var fotoSrc = escaparHtml(dados.foto || "https://i.pravatar.cc/80?img=11");
 
     /* Monta cada item de experiência para o mini-CV */
     var expHtml = "";
@@ -130,24 +131,24 @@ function renderizarPreview() {
         var atHtml = "";
         var limite = Math.min(exp.atividades.length, 2);
         for (var i = 0; i < limite; i++) {
-            atHtml += "<li style='font-size:5.5px;color:#444;'>" + escaparHtml(exp.atividades[i]) + "</li>";
+            atHtml += "<li>" + escaparHtml(exp.atividades[i]) + "</li>";
         }
         expHtml +=
             '<div class="cv-item">'
           + '<div class="cv-item-titulo">' + escaparHtml(exp.cargo) + ', ' + escaparHtml(exp.empresa) + '</div>'
           + '<div class="cv-item-meta">' + escaparHtml(exp.local) + ' | ' + escaparHtml(exp.inicio) + ' &ndash; ' + escaparHtml(exp.fim) + '</div>'
-          + '<ul style="list-style:disc;padding-left:7px;">' + atHtml + '</ul>'
+          + '<ul>' + atHtml + '</ul>'
           + '</div>';
     });
 
     if (expHtml === "") {
-        expHtml = '<span style="font-size:6px;color:#ccc;">Nenhuma experiência cadastrada.</span>';
+        expHtml = '<span class="cv-empty">Nenhuma experiência cadastrada.</span>';
     }
 
     /* Monta o HTML completo do mini-CV */
     preview.innerHTML =
         '<div class="cv-header">'
-      + '<img class="cv-foto" src="https://i.pravatar.cc/80?img=11" alt="Foto">'
+      + '<img class="cv-foto" src="' + fotoSrc + '" alt="Foto">'
       + '<div>'
       + '<div class="cv-nome">' + escaparHtml(dados.nome || "Seu Nome") + '</div>'
       + '<div class="cv-cargo-txt">' + escaparHtml(dados.titulo || "Seu Cargo") + '</div>'

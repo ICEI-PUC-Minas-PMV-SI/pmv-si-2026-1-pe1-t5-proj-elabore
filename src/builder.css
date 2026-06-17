@@ -195,32 +195,40 @@
 
 /* ── MINI-CURRÍCULO (painel de prévia) ────────────────────────────── */
 /* As telas do grupo renderizam o preview dentro de #preview-cv usando as
-   classes .cv*. Os tamanhos de fonte são propositalmente pequenos por se
-   tratar de uma miniatura. */
+   classes .cv*. A escala abaixo acompanha o currículo exibido na Mini-Bio. */
 .cv {
-  width: 100%;
-  max-width: 340px;
+  width: min(620px, 100%);
+  max-width: 620px;
+  min-height: 800px;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 0;
   background: white;
   box-shadow: 0 12px 28px rgba(17, 24, 39, 0.14);
-  font-size: 7px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.55;
 }
 
 .cv-header {
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
-  padding: 12px;
-  background: linear-gradient(150deg, #cfe4ff, #eaf6ff 55%, #ffffff);
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 28px;
+  align-items: center;
+  padding: 46px 54px 0;
+  background: white;
+}
+
+.cv-header > div:not(.cv-contato) {
+  grid-column: 1 / -1;
+  grid-row: 2;
 }
 
 .cv-foto {
-  width: 40px;
-  height: 40px;
+  grid-column: 1;
+  grid-row: 1;
+  width: 100px;
+  height: 100px;
   flex-shrink: 0;
-  border: 2px solid white;
+  border: 0;
   border-radius: 50%;
   background: #d7ecff;
   object-fit: cover;
@@ -228,111 +236,131 @@
 
 .cv-nome {
   color: var(--blue-dark);
-  font-size: 12px;
-  font-weight: 800;
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 1.12;
+  text-transform: uppercase;
 }
 
 .cv-cargo-txt {
-  color: var(--blue);
-  font-size: 7px;
-  font-weight: 700;
+  margin-top: 6px;
+  color: #404753;
+  font-size: 17px;
+  font-weight: 400;
 }
 
 .cv-contato {
-  margin-left: auto;
-  color: var(--muted);
-  font-size: 6px;
-  line-height: 1.7;
+  grid-column: 2;
+  grid-row: 1;
+  margin-left: 0;
+  color: var(--blue-dark);
+  font-size: 13px;
+  line-height: 1.6;
   text-align: right;
 }
 
 .cv-secao {
-  display: flex;
+  display: block;
+  margin-top: 28px;
+  padding: 0 54px;
 }
 
 .cv-label-col {
-  position: relative;
-  width: 12px;
-  flex-shrink: 0;
-}
-
-.cv-label {
-  position: absolute;
-  bottom: 6px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-90deg);
-  color: #b9c4d4;
-  font-size: 4.5px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  white-space: nowrap;
+  display: none;
 }
 
 .cv-corpo {
-  flex: 1;
-  padding: 8px 10px 8px 4px;
+  padding: 0;
+}
+
+.cv-header + .cv-secao .cv-corpo {
+  border-left: 4px solid var(--blue);
+  padding-left: 16px;
+}
+
+.cv-header + .cv-secao .cv-corpo::before {
+  display: block;
+  margin-bottom: 12px;
+  color: #4e75a8;
+  content: "SOBRE";
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .cv-sec-titulo {
-  margin-bottom: 5px;
-  padding-bottom: 2px;
-  border-bottom: 0.5px solid var(--line);
-  color: var(--blue);
-  font-size: 6.5px;
+  margin: 0 0 12px;
+  padding: 0;
+  border-bottom: 0;
+  color: #4e75a8;
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
 .cv-sec-titulo.ativo {
-  margin-left: -4px;
-  padding: 2px 4px;
-  border-radius: 3px;
-  background: var(--blue-soft);
+  margin-left: 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .cv-bio {
-  color: var(--muted);
-  font-size: 6px;
-  line-height: 1.5;
+  color: #293241;
+  font-size: 13px;
+  line-height: 1.55;
 }
 
 .cv-item {
-  margin-bottom: 5px;
+  margin-bottom: 16px;
 }
 
 .cv-item-titulo {
-  color: var(--blue);
-  font-size: 6.5px;
+  color: var(--ink);
+  font-size: 13px;
   font-weight: 700;
 }
 
 .cv-item-meta {
-  margin-bottom: 2px;
+  margin-bottom: 8px;
   color: var(--muted);
-  font-size: 5.5px;
+  font-size: 12px;
+}
+
+.cv ul {
+  margin: 10px 0 0;
+  padding-left: 24px !important;
+  list-style: disc;
+}
+
+.cv li {
+  color: #293241 !important;
+  font-size: 13px !important;
+  line-height: 1.55;
 }
 
 .cv-rodape {
-  display: flex;
-  border-top: 0.5px solid var(--line);
+  display: block;
+  margin-top: 28px;
+  padding: 0 54px 46px;
+  border-top: 0;
 }
 
 .cv-col {
-  flex: 1;
-  padding: 8px 8px 10px;
+  padding: 0;
+  margin-top: 28px;
 }
 
 .cv-col:first-child {
-  border-right: 0.5px solid var(--line);
+  margin-top: 0;
+  border-right: 0;
 }
 
 .cv-hab-titulo {
-  margin-top: 6px;
-  margin-bottom: 2px;
+  margin-top: 12px;
+  margin-bottom: 4px;
   color: var(--ink);
-  font-size: 6px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -341,9 +369,17 @@
 }
 
 .cv-hab-lista {
-  color: #444;
-  font-size: 6px;
-  line-height: 1.5;
+  color: #293241;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.cv span {
+  font-size: 13px !important;
+}
+
+.cv-empty {
+  color: var(--muted);
 }
 
 /* ── MODAL (Adicionar / Editar) ───────────────────────────────────── */

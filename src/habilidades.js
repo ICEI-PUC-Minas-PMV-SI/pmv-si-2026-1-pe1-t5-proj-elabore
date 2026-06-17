@@ -195,6 +195,7 @@ function renderizarPreview() {
     var dados = lerDados();
     var preview = document.getElementById("preview-cv");
     var hab = dados.habilidades;
+    var fotoSrc = escaparHtml(dados.foto || "https://i.pravatar.cc/80?img=11");
 
     /* Experiências resumidas */
     var expHtml = "";
@@ -227,7 +228,7 @@ function renderizarPreview() {
 
     preview.innerHTML =
         '<div class="cv-header">'
-      + '<img class="cv-foto" src="https://i.pravatar.cc/80?img=11" alt="Foto">'
+      + '<img class="cv-foto" src="' + fotoSrc + '" alt="Foto">'
       + '<div>'
       + '<div class="cv-nome">' + escaparHtml(dados.nome || "Seu Nome") + '</div>'
       + '<div class="cv-cargo-txt">' + escaparHtml(dados.titulo || "Seu Cargo") + '</div>'
@@ -255,7 +256,7 @@ function renderizarPreview() {
       + '<div class="cv-rodape">'
       + '<div class="cv-col">'
       + '<div class="cv-sec-titulo">Educação</div>'
-      + (eduHtml || '<span style="font-size:6px;color:#ccc;">Nenhuma formação.</span>')
+      + (eduHtml || '<span class="cv-empty">Nenhuma formação.</span>')
       + '</div>'
       + '<div class="cv-col">'
       + '<div class="cv-sec-titulo ativo">Habilidades</div>'
