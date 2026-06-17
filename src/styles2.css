@@ -328,3 +328,28 @@ main.container {
   opacity: 0.45;
   pointer-events: none;
 }
+
+/* Botão Voltar ao Topo */
+#btn-topo {
+  display: none; /* Começa escondido */
+  position: fixed; /* Fica fixo na tela */
+  bottom: 20px; /* Distância do fundo */
+  right: 30px; /* Distância da direita */
+  z-index: 99; /* Fica acima de tudo */
+  border: none;
+  outline: none;
+  background-color: #0f172a; /* Mesma cor dourada das estrelas, ou mude para a que preferir */
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%; /* Deixa ele redondinho */
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#btn-topo:hover {
+  background-color: #0f172a; /* Escurece um pouco no hover */
+  transform: scale(1.1); /* Dá um leve zoom ao passar o mouse */
+}

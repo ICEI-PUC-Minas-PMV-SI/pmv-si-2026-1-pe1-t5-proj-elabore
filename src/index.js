@@ -66,3 +66,27 @@ window.addEventListener("DOMContentLoaded", () => {
     console.log("Erro no localStorage:", erro);
   }
 });
+
+// 3. LÓGICA DO BOTÃO VOLTAR AO TOPO
+window.addEventListener("DOMContentLoaded", () => {
+  const btnTopo = document.getElementById("btn-topo");
+
+  // Monitora a rolagem da página
+  window.addEventListener("scroll", () => {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      if (btnTopo) btnTopo.style.display = "block";
+    } else {
+      if (btnTopo) btnTopo.style.display = "none";
+    }
+  });
+
+  // Evento de clique para subir suavemente
+  if (btnTopo) {
+    btnTopo.onclick = function() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    };
+  }
+});
