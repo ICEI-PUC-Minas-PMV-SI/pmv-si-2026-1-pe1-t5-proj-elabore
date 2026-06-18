@@ -119,17 +119,28 @@ function configurarBotaoPDF() {
     botao.addEventListener("click", () => {
         // Seleciona a div que simula a folha A4 para virar o PDF
         const alvo = document.getElementById("curriculo-conteudo");
+        document.body.classList.add("gerando-pdf");
         
         // Configurações finas do PDF para encaixe perfeito em folha de papel
         const opcoes = {
-            margin:       12,
+            margin:       0,
             filename:     'Curriculo_Profissional.pdf',
             image:        { type: 'jpeg', quality: 0.98 },
             html2canvas:  { scale: 2, useCORS: true }, // Mantém os textos nítidos
-            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+            pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
         };
         
         // Dispara o download automatizado client-side
-        html2pdf().set(opcoes).from(alvo).save();
+        html2pdf()
+            .set(opcoes)
+            .from(alvo)
+            .save()
+            .then(() => {
+                document.body.classList.remove("gerando-pdf");
+            })
+            .catch(() => {
+                document.body.classList.remove("gerando-pdf");
+            });
     });
 }

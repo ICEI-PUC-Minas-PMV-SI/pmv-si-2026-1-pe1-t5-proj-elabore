@@ -571,6 +571,26 @@
   color: var(--blue);
 }
 
+body.gerando-pdf .curriculo-a4 {
+  width: 210mm;
+  max-width: none;
+  min-height: 0;
+  height: auto;
+  padding: 12mm 15mm;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+body.gerando-pdf .curriculo-a4 .cv {
+  min-height: 0;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
 @media (max-width: 640px) {
   .preview-stage h1 {
     font-size: 26px;
