@@ -1,4 +1,4 @@
-# 📁 Apresentação
+# Apresentação
 
 
 
@@ -6,7 +6,7 @@ Esta pasta contém os materiais de apresentação do projeto **e-LABORE**, inclu
 
 
 
-## 📦 Arquivos e Links
+## Arquivos e Links
 
 
 
@@ -14,9 +14,9 @@ Esta pasta contém os materiais de apresentação do projeto **e-LABORE**, inclu
 
 | :--- | :--- | :--- |
 
-| 📄 **Slides da Apresentação** | Slides finais do projeto em formato PDF. | [Acessar o PDF](./apresentacao-final.pdf.pdf) |
+| **Slides da Apresentação** | Slides finais do projeto em formato PDF. | [Acessar o PDF](./apresentacao-final.pdf.pdf) |
 
-| 🎥 **Vídeo de Demonstração** | Demonstração do funcionamento do sistema (520 MB). | [Assistir ao Vídeo no Google Drive ↗](https://drive.google.com/file/d/1DroSgGLCcSXvUL3SaK1J5iRVEJdA2UIK/view?usp=sharing) |
+| **Vídeo de Demonstração** | Demonstração do funcionamento do sistema (520 MB). | [Assistir ao Vídeo no Google Drive ↗](https://drive.google.com/file/d/1DroSgGLCcSXvUL3SaK1J5iRVEJdA2UIK/view?usp=sharing) |
 
 
 
@@ -24,7 +24,7 @@ Esta pasta contém os materiais de apresentação do projeto **e-LABORE**, inclu
 
 
 
-## 🎯 Conteúdo da Apresentação
+## Conteúdo da Apresentação
 
 
 
@@ -57,27 +57,15 @@ A apresentação final contempla os seguintes tópicos:
 ---
 
 
-
-## 🎬 Roteiro do Vídeo de Demonstração
-
-
+## Roteiro do Vídeo de Demonstração
 
 O vídeo segue o roteiro sugerido para a validação da solução:
-
-
-
 1. **Introdução:** Apresentação do objetivo principal do e-LABORE.
-2. 
 2. **Landing Page:** Exibição da página de destino inicial.
-3. 
 3. **Acesso:** Demonstração dos fluxos de login e cadastro.
-4. 
 4. **Uso prático:** Percurso completo pelo preenchimento das informações do currículo.
-5. 
 5. **Resultado:** Visualização da prévia final do documento.
-6. 
 6. **Conclusão:** Download do currículo gerado em formato PDF.
-
 
 
 
