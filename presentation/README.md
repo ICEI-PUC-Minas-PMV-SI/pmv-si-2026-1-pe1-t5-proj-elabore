@@ -2,14 +2,12 @@
 
 Esta pasta contém os materiais de apresentação do projeto **e-LABORE**, incluindo os slides e o vídeo de demonstração da solução desenvolvida.
 
-## 📦 Arquivos do Repositório
+## 📦 Arquivos e Links
 
-| Arquivo | Descrição |
-| :--- | :--- |
-| 📄 [apresentacao-final.pdf](./apresentacao-final.pdf) | Slides finais do projeto em formato PDF. |
-| 🎥 [video-demonstracao.mp4](./video-demonstracao.mp4) | Vídeo demonstrativo do funcionamento do sistema. |
-
-> 💡 *Nota sobre o vídeo:* Se o arquivo `video-demonstracao.mp4` for maior que 100MB, recomendamos subi-lo no YouTube (como Não Listado) e substituir o link acima por: `[Assistir no YouTube](LINK_DO_VIDEO)`.
+| Recurso | Descrição | Link de Acesso |
+| :--- | :--- | :--- |
+| 📄 **Slides da Apresentação** | Slides finais do projeto em formato PDF. | [Acessar o PDF](./apresentacao-final.pdf) |
+| 🎥 **Vídeo de Demonstração** | Demonstração do funcionamento do sistema (520 MB). | [Assistir ao Vídeo no Google Drive ↗](https://drive.google.com/file/d/1DroSgGLCcSXvUL3SaK1J5iRVEJdA2UIK/view?usp=sharing)
 
 ---
 
