@@ -6,7 +6,7 @@ Esta pasta contém os materiais de apresentação do projeto **e-LABORE**, inclu
 
 | Recurso | Descrição | Link de Acesso |
 | :--- | :--- | :--- |
-| 📄 **Slides da Apresentação** | Slides finais do projeto em formato PDF. | [[Acessar o PDF](./apresentacao-final.pdf). |
+| 📄 **Slides da Apresentação** | Slides finais do projeto em formato PDF. | [Acessar o PDF](./apresentacao-final.pdf). |
 | 🎥 **Vídeo de Demonstração** | Demonstração do funcionamento do sistema (520 MB). | [Assistir ao Vídeo no Google Drive ↗](https://drive.google.com/file/d/1DroSgGLCcSXvUL3SaK1J5iRVEJdA2UIK/view?usp=sharing) |
 
 ---
