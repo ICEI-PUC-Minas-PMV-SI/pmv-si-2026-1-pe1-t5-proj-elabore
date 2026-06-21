@@ -1,5 +1,6 @@
 # Apresentação
 
+https://github.com/user-attachments/assets/7e1a314a-177c-4ed7-ab54-4630d5c87e72
 
 
 Esta pasta contém os materiais de apresentação do projeto **e-LABORE**, incluindo os slides e o vídeo de demonstração da solução desenvolvida.
