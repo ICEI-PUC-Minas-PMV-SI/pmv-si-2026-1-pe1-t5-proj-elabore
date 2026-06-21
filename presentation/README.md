@@ -18,44 +18,26 @@ Esta pasta contém os materiais de apresentação do projeto **e-LABORE**, inclu
 
 | **Vídeo de Demonstração** | Demonstração do funcionamento do sistema (520 MB). | [Assistir ao Vídeo no Google Drive ↗](https://drive.google.com/file/d/1DroSgGLCcSXvUL3SaK1J5iRVEJdA2UIK/view?usp=sharing) |
 
-
-
 ---
 
-
-
 ## Conteúdo da Apresentação
-
 
 
 A apresentação final contempla os seguintes tópicos:
 
 
-
 - Nome e marca do projeto;
-- 
 - Problema enfrentado pelo público-alvo;
-- 
 - Justificativa social da solução;
-- 
 - Personas e histórias de usuário;
-- 
 - Requisitos funcionais e não funcionais;
-- 
 - Fluxo de telas (incluindo login/cadastro);
-- 
 - Identidade visual e decisões de interface;
-- 
 - Demonstração prática do uso do sistema;
-- 
 - Geração e download do currículo em PDF;
-- 
 - Principais aprendizados e próximos passos.
-- 
-
 
 ---
-
 
 ## Roteiro do Vídeo de Demonstração
 
